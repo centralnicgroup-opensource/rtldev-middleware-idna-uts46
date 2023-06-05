@@ -71,7 +71,7 @@
     "prettier": "^2.6.2",
     "rollup": "^3.18.0",
     "rollup-plugin-bundle-size": "^1.0.3",
-    "semantic-release": "^20.1.1",
+    "semantic-release": "^21.0.3",
     "serve": "^14.2.0",
     "terser": "^5.16.6",
     "tsx": "^3.12.3"
