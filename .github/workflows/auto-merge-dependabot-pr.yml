@@ -9,6 +9,7 @@ jobs:
   tests:
     uses: ./.github/workflows/test.yml
   dependabot:
+    name: "Auto-merge Dependabot PR"
     runs-on: ubuntu-latest
     needs: tests
     if: ${{ github.actor == 'dependabot[bot]' }}
