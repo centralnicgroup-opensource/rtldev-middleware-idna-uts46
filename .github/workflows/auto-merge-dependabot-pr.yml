@@ -12,8 +12,9 @@ permissions:
 jobs:
   tests:
     uses: ./.github/workflows/test.yml
+    secrets: inherit
   dependabot:
-    name: "Auto-merge Dependabot PR"
+    name: Auto-merge Dependabot PR
     runs-on: ubuntu-latest
     needs: tests
     if: ${{ github.actor == 'dependabot[bot]' }}
