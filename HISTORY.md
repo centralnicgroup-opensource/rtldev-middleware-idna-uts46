@@ -1,3 +1,10 @@
+## [5.1.2](https://github.com/hexonet/idna-uts46/compare/v5.1.1...v5.1.2) (2023-10-31)
+
+
+### Bug Fixes
+
+* **deps:** bump punycode from 2.3.0 to 2.3.1 ([1e4d79a](https://github.com/hexonet/idna-uts46/commit/1e4d79ae7b295b0cac5764b2ec0b95105895477e))
+
 ## [5.1.1](https://github.com/hexonet/idna-uts46/compare/v5.1.0...v5.1.1) (2023-10-20)
 
 
