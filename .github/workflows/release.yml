@@ -2,12 +2,17 @@ name: Release
 on:
   push:
     branches:
-      - 'master'
+      - master
 
 jobs:
   release:
     name: Release Job @ ubuntu-latest
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RTLDEV_MW_CI_OS }}
+    permissions:
+      contents: write
+      issues: write
+      deployments: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,7 +28,7 @@ jobs:
         run: npm ci
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RTLDEV_MW_CI_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          RTLDEV_MW_NOTIFICATION_URI: ${{ secrets.RTLDEV_MW_NOTIFICATION_URI }}
+          RTLDEV_MW_NOTIFICATION_URI: ${{ secrets.RTLDEV_MW_CI_NOTIFICATION_URI }}
         run: npx semantic-release

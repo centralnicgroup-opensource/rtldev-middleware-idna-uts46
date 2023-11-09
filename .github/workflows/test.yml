@@ -6,7 +6,9 @@ on:
 jobs:
   test:
     name: 🧪 Linting
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RTLDEV_MW_CI_OS }}
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
@@ -22,8 +24,6 @@ jobs:
           cache: 'npm'
       - name: Install node dependencies
         run: npm ci
-      #      - name: Run test/validation
-      #        run: gulp prettierCheck
       - name: Super Linter Code Base
         uses: github/super-linter/slim@v5
         env:
@@ -40,11 +40,12 @@ jobs:
       matrix:
         node-version:
           - ${{ vars.RTLDEV_MW_CI_NODE_VERSION }}
-    # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     name: 🧪 Testing
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RTLDEV_MW_CI_OS }}
     needs: test
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout

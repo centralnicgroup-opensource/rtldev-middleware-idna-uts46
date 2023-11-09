@@ -5,17 +5,19 @@ on:
       - opened
       - synchronize
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   tests:
     uses: ./.github/workflows/test.yml
     secrets: inherit
+    permissions:
+      contents: read
+
   dependabot:
     name: Auto-merge Dependabot PR
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RTLDEV_MW_CI_OS }}
+    permissions:
+      contents: write
+      pull-requests: write
     needs: tests
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
