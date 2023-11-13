@@ -78,7 +78,7 @@
     "semantic-release": "^22.0.5",
     "serve": "^14.2.0",
     "terser": "^5.19.4",
-    "tsx": "^3.12.3"
+    "tsx": "^4.1.1"
   },
   "lint-staged": {
     "*": "prettier -u --write"
