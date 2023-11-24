@@ -1,1 +1,1 @@
-exports.publish = require('rtldev-middleware-gulp-release-notification-plugin');
+exports.publishNotification = require('rtldev-middleware-gulp-release-notification-plugin');

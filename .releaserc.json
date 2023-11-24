@@ -12,7 +12,7 @@
       "@semantic-release/exec",
       {
         "prepareCmd": "npm run build && npx lint-staged",
-        "successCmd": "gulp -f gulpfile.cjs publish --notes \"${encodeURIComponent(nextRelease.notes)}\""
+        "successCmd": "gulp -f gulpfile.cjs publishNotification --update \"${nextRelease.version}\" --type \"${nextRelease.type}\" --notes \"${encodeURIComponent(nextRelease.notes)}\""
       }
     ],
     "@semantic-release/npm",

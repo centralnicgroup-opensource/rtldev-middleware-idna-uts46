@@ -11,9 +11,9 @@
   "engines": {
     "node": ">=20.6.1"
   },
-  "homepage": "https://github.com/hexonet/idna-uts46",
-  "repository": "github:hexonet/idna-uts46",
-  "bugs": "https://github.com/hexonet/idna-uts46/issues",
+  "homepage": "https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46",
+  "repository": "github:centralnicgroup-opensource/rtldev-middleware-idna-uts46",
+  "bugs": "https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/issues",
   "keywords": [
     "unicode",
     "idn",
@@ -74,7 +74,7 @@
     "prettier": "^3.0.0",
     "rollup": "^4.0.0",
     "rollup-plugin-bundle-size": "^1.0.3",
-    "rtldev-middleware-gulp-release-notification-plugin": "github:centralnicgroup-opensource/rtldev-middleware-gulp-release-notification-plugin",
+    "rtldev-middleware-gulp-release-notification-plugin": "github:centralnicgroup-opensource/rtldev-middleware-gulp-release-notification-plugin#semver:^1.0.0",
     "semantic-release": "^22.0.5",
     "serve": "^14.2.0",
     "terser": "^5.19.4",
