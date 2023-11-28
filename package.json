@@ -50,7 +50,8 @@
     "build:rollup": "rollup -c rollup-esm.config.mjs"
   },
   "overrides": {
-    "glob-parent": "^6.0.2"
+    "glob-parent": "^6.0.2",
+    "chokidar": "^3.5.3"
   },
   "dependencies": {
     "punycode": "^2.1.1"
