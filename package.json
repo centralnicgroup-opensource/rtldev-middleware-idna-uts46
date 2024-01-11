@@ -75,7 +75,7 @@
     "prettier": "^3.0.0",
     "rollup": "^4.0.0",
     "rollup-plugin-bundle-size": "^1.0.3",
-    "rtldev-middleware-gulp-release-notification-plugin": "github:centralnicgroup-opensource/rtldev-middleware-gulp-release-notification-plugin#semver:^1.0.0",
+    "rtldev-middleware-gulp-release-notification-plugin": "github:centralnicgroup-opensource/rtldev-middleware-gulp-release-notification-plugin#semver:^2.0.3",
     "semantic-release": "^22.0.5",
     "serve": "^14.2.0",
     "terser": "^5.19.4",
