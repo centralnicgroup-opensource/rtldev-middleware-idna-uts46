@@ -6,8 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/hexonet/idna-uts46/blob/master/CONTRIBUTING.md)
 
-This module is a IDNA UTS46 connector library for javascript.
-This is a maintained fork of the idna-uts46 library originally written by jcranmer. Continously maintained by KaiSchwarz-cnic and fully ported to JS by dawsbot.
+This module is a IDNA UTS46 connector library for javascript. In addition to the default functionality of tr46, we offer converting domain names to unicode / punycode considering the respective registry provider's behavior.
 
 The [JS Punycode converter library](https://github.com/bestiejs/punycode.js/) is
 a great tool for handling Unicode domain names, but it only implements the
@@ -22,12 +21,53 @@ the full mapping for these strings, as defined by
 - [Documentation](https://centralnicgroup-public.github.io/rtldev-middleware-documentation/docs/hexonet/idna-uts46/)
 - [Release Notes](https://github.com/hexonet/idna-uts46/releases)
 
+## v6 Notes & Migration Guide
+
+With v6 we migrated our library to npm package `tr46` as software dependency. By that step we use a library that is actively maintained in direction of correctly supporting the `TR46` standard and supporting the latest Version of the Unicode Standard. Reinventing the wheel isn't useful and something we have time or resources for. We were able to dramatically decrease the number of lines of code on our end.
+
+### Improvements
+
+- method `toUnicode` comes with auto-detection of `transitionalProcessing` setting based on the provided domain name input
+- method `toAscii` comes with auto-detection of `transitionalProcessing` setting based on the provided domain name input
+
+### Breaking Changes
+
+In general, we don't see a blocker for upgrading to v6. Still, consider the below changes.
+
+#### Performance
+
+We haven't tested for this explicitely, but as we dropped the IDNA mapping table on our end by the Migration to package `tr46`, there's no longer a compression included for it as that table is no longer directly in our hands. This was a great way for improving the page load time on browser side. Maintainability + Efforts > Performance. This may again change in future, but needs resources assigned. PR = welcome.
+
+#### New Labels for Options
+
+The below configuration options for the methods `toUnicode`and `toAscii` must be renamed in case you're using them:
+
+| **Option, old** | **Option, new** |
+|---|---|
+| transitional | transitionalProcessing |
+| useStd3ASCII | useSTD3ASCIIRules      |
+
+#### Behavior
+
+Earlier versions kept option `transitional` by default to false which is now automatically detected and results may therefore differ.
+This affects the `toAscii` method.
+
+The `toUnicode` function did not allow for a options parameter in earlier versions, now it follows the exemplary way of package `tr46`.
+
+#### Additional Notes
+
+We noticed that some of unit tests which were testing domain names via `verifyDnsLength` are no longer throwing an Error.
+The package `tr46` is here the root cause. We'll be analyzing this on our end if this is a bug or just a results of supporting a more recent `TR46` Standard.
+
 ## Authors
 
-NOTE: As mentioned, initial work done by [jcranmer](https://github.com/jcranmer).
-
 - [KaiSchwarz-cnic](https://github.com/kaischwarz-cnic)
-- [dawsbot](https://github.com/dawsbot)
+
+**Thanks for the below former contributions:**
+
+- Initial work done by [jcranmer](https://github.com/jcranmer).
+- v5: Migration of the IDNA Mapping Table's Build Process from Python to NodeJS5 by [dawsbot](https://github.com/dawsbot)
+- v5: Performance Improvements for the Browser Bundle's Page Load by [dawsbot](https://github.com/dawsbot)
 
 See also the list of [contributors](https://github.com/hexonet/idna-uts46/graphs/contributors) who participated in this project.
 

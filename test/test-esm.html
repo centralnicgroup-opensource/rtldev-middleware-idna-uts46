@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -16,8 +16,8 @@
       }
     </style>
     <script type="module">
-      import * as uts46 from "./index.mjs";
-      
+      import * as uts46 from './index.mjs';
+
       export function start() {
         const eL = document.getElementById('convert');
         eL.innerHTML = '<h1 class="ok">... IDN Converter loaded</b><h1>';
@@ -181,22 +181,22 @@
           }</b> ${key}: ${val}</div>`;
         });
 
-        // --- method toAscii (transitional: false)
-        eL.innerHTML += '<h3>... transitional: false</h3>';
+        // --- method toAscii (transitionalProcessing: false)
+        eL.innerHTML += '<h3>... transitionalProcessing: false</h3>';
         tmp = data.toAsciiTransitional0;
         Object.keys(tmp).forEach((key) => {
-          const val = uts46.toAscii(key, { transitional: false });
+          const val = uts46.toAscii(key, { transitionalProcessing: false });
           const ok = tmp[key] === val;
           eL.innerHTML += `<div class="${ok ? 'ok' : 'err'}"><b>${
             ok ? 'OK' : 'FAIL'
           }</b> ${key}: ${val}</div>`;
         });
 
-        // --- method toAscii (transitional: true)
-        eL.innerHTML += '<h3>... transitional: true</h3>';
+        // --- method toAscii (transitionalProcessing: true)
+        eL.innerHTML += '<h3>... transitionalProcessing: true</h3>';
         tmp = data.toAsciiTransitional1;
         Object.keys(tmp).forEach((key) => {
-          const val = uts46.toAscii(key, { transitional: true });
+          const val = uts46.toAscii(key, { transitionalProcessing: true });
           const ok = tmp[key] === val;
           eL.innerHTML += `<div class="${ok ? 'ok' : 'err'}"><b>${
             ok ? 'OK' : 'FAIL'
@@ -222,13 +222,13 @@
           }</b> ${val}</div>`;
         });
 
-        // --- method toAscii (transitional: true & throws)
-        eL.innerHTML += '<h3>... throws & transitional: true</h3>';
+        // --- method toAscii (transitionalProcessing: true & throws)
+        eL.innerHTML += '<h3>... throws & transitionalProcessing: true</h3>';
         tmp = data.toAsciiTransitional1throws;
         tmp.forEach((val) => {
           let ok;
           try {
-            uts46.toAscii(val, { transitional: true });
+            uts46.toAscii(val, { transitionalProcessing: true });
             ok = false;
           } catch (e) {
             ok = true;
@@ -241,13 +241,13 @@
           }</b> ${val}</div>`;
         });
 
-        // --- method toAscii (transitional: false & throws)
-        eL.innerHTML += '<h3>... throws & transitional: false</h3>';
+        // --- method toAscii (transitionalProcessing: false & throws)
+        eL.innerHTML += '<h3>... throws & transitionalProcessing: false</h3>';
         tmp = data.toAsciiTransitional0throws;
         tmp.forEach((val) => {
           let ok;
           try {
-            uts46.toAscii(val, { transitional: false });
+            uts46.toAscii(val, { transitionalProcessing: false });
             ok = false;
           } catch (e) {
             ok = true;
@@ -260,13 +260,13 @@
           }</b> ${val}</div>`;
         });
 
-        // --- method toAscii (useStd3ASCII: true, throws)
-        eL.innerHTML += '<h3>... throws & useStd3ASCII: true</h3>';
+        // --- method toAscii (useSTD3ASCIIRules: true, throws)
+        eL.innerHTML += '<h3>... throws & useSTD3ASCIIRules: true</h3>';
         tmp = data.toAsciiUseStd3ASCIIthrows;
         tmp.forEach((val) => {
           let ok;
           try {
-            uts46.toAscii(val, { useStd3ASCII: true });
+            uts46.toAscii(val, { useSTD3ASCIIRules: true });
             ok = false;
           } catch (e) {
             ok = true;
@@ -364,13 +364,13 @@
           }</b> ${val}</div>`;
         });
 
-        // --- method toUnicode (useStd3ASCII: true, throws)
-        eL.innerHTML += '<h3>... useStd3ASCII: true & throws</h3>';
+        // --- method toUnicode (useSTD3ASCIIRules: true, throws)
+        eL.innerHTML += '<h3>... useSTD3ASCIIRules: true & throws</h3>';
         tmp = data.toUnicodeUseStd3ASCII1throws;
         tmp.forEach((val) => {
           let ok;
           try {
-            uts46.toUnicode(val, { useStd3ASCII: true });
+            uts46.toUnicode(val, { useSTD3ASCIIRules: true });
             ok = false;
           } catch (e) {
             ok = true;
