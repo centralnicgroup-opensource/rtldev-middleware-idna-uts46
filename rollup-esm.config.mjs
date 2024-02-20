@@ -1,6 +1,8 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import bundleSize from 'rollup-plugin-bundle-size';
+import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 
 export default {
   input: 'src/index.js',
@@ -9,20 +11,15 @@ export default {
       file: 'dist/index.bundle.js',
       format: 'iife',
       name: 'idnaUts46',
-      plugins: [terser(), bundleSize()],
     },
     {
       file: 'dist/index.cjs',
       format: 'cjs',
-      plugins: [terser(), bundleSize()],
     },
     {
       file: 'dist/index.mjs',
       format: 'es',
-      plugins: [terser(), bundleSize()],
     },
   ],
-  plugins: [
-    nodeResolve(),
-  ],
+  plugins: [nodeResolve(), commonjs(), json(), terser(), bundleSize()],
 };

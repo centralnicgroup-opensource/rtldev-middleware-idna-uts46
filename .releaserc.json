@@ -23,7 +23,6 @@
           "HISTORY.md",
           "@(.releaserc|.sharedreleaserc|package?(-lock)).json",
           "release.config.js",
-          "dist/index.d.ts",
           "dist/index.mjs",
           "dist/index.cjs",
           "dist/index.bundle.js"
