@@ -42,10 +42,10 @@ We haven't tested for this explicitely, but as we dropped the IDNA mapping table
 
 The below configuration options for the methods `toUnicode`and `toAscii` must be renamed in case you're using them:
 
-| **Option, old** | **Option, new** |
-|---|---|
-| transitional | transitionalProcessing |
-| useStd3ASCII | useSTD3ASCIIRules      |
+| **Option, old** | **Option, new**        |
+| --------------- | ---------------------- |
+| transitional    | transitionalProcessing |
+| useStd3ASCII    | useSTD3ASCIIRules      |
 
 #### Behavior
 
