@@ -165,10 +165,10 @@
         });
 
         // --- method toAscii
-        eL.innerHTML += '<h2>Method toAscii</h2>';
+        eL.innerHTML += '<h2>Method toAscii (transitionalProcessing: true)</h2>';
         tmp = data.toAscii;
         Object.keys(tmp).forEach((key) => {
-          let val = uts46.toAscii(key);
+          let val = uts46.toAscii(key, {transitionalProcessing: true});
           const ok = tmp[key] === val;
           if (/^[\s ]*$/.test(key)) {
             key = `&quot;${key}&quot;`;
@@ -242,7 +242,7 @@
         });
 
         // --- method toAscii (transitionalProcessing: false & throws)
-        eL.innerHTML += '<h3>... throws & transitionalProcessing: false</h3>';
+        eL.innerHTML += '<h3>... throws & transitionalProcessing: false (failing, see README.md v6 Notes)</h3>';
         tmp = data.toAsciiTransitional0throws;
         tmp.forEach((val) => {
           let ok;
@@ -329,10 +329,10 @@
         });
 
         // --- method toUnicode
-        eL.innerHTML += '<h2>Method toUnicde</h2>';
+        eL.innerHTML += '<h2>Method toUnicode (transitionalProcessing: false)</h2>';
         tmp = data.toUnicode;
         Object.keys(tmp).forEach((key) => {
-          let val = uts46.toUnicode(key);
+          let val = uts46.toUnicode(key, { transitionalProcessing: false });
           const ok = tmp[key] === val;
           if (/^[\s ]*$/.test(key)) {
             key = `&quot;${key}&quot;`;
