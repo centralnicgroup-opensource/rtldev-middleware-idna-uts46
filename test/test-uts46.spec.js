@@ -1,7 +1,7 @@
 'use strict';
 
 import assert from 'assert';
-import * as uts46 from '../dist/index.mjs';
+import * as uts46 from '../src/index.js';
 
 suite('toASCII', function () {
   test('Convert method tests', function () {
