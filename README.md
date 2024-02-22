@@ -46,6 +46,7 @@ The below configuration options for the methods `toUnicode`and `toAscii` must be
 | --------------- | ---------------------- |
 | transitional    | transitionalProcessing |
 | useStd3ASCII    | useSTD3ASCIIRules      |
+| verifyDnsLength | verifyDNSLength        |
 
 #### Behavior
 
@@ -53,11 +54,6 @@ Earlier versions kept option `transitional` by default to false which is now aut
 This affects the `toAscii` method.
 
 The `toUnicode` function did not allow for a options parameter in earlier versions, now it follows the exemplary way of package `tr46`.
-
-#### Additional Notes
-
-We noticed that some of unit tests which were testing domain names via `verifyDnsLength` are no longer throwing an Error.
-The package `tr46` is here the root cause. We'll be analyzing this on our end if this is a bug or just a results of supporting a more recent `TR46` Standard.
 
 ## Authors
 
