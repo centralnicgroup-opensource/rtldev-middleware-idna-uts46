@@ -1,3 +1,15 @@
+# [6.0.0](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v5.1.2...v6.0.0) (2024-2-22)
+
+
+### Code Refactoring
+
+* **tr46:** reviewed in direction of tr46 as core library and adding our logic around ([d0c080a](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/d0c080a0d1ae9382cda2b4dd8d233805c8da5cdd))
+
+
+### BREAKING CHANGES
+
+* **tr46:** Migration to package tr46. Find Notes and Migration Guide as part of the README.md
+
 ## [5.1.2](https://github.com/hexonet/idna-uts46/compare/v5.1.1...v5.1.2) (2023-10-31)
 
 

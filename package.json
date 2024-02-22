@@ -1,7 +1,7 @@
 {
   "name": "idna-uts46-hx",
   "description": "Convert Domain Names correctly from IDN to Punycode and vice-versa and offer TR46 processing.",
-  "version": "5.1.2",
+  "version": "6.0.0",
   "private": false,
   "type": "module",
   "main": "dist/index.mjs",
