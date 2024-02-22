@@ -267,8 +267,7 @@
         });
 
         // --- method toAscii (useSTD3ASCIIRules: true, throws)
-        eL.innerHTML +=
-          '<h3>... throws & useSTD3ASCIIRules: true (failing, see README.md v6 Notes)</h3>';
+        eL.innerHTML += '<h3>... throws & useSTD3ASCIIRules: true</h3>';
         tmp = data.toAsciiUseStd3ASCIIthrows;
         tmp.forEach((val) => {
           let ok;
@@ -283,11 +282,11 @@
           }</b> ${val}</div>`;
         });
 
-        // --- method toAscii (verifyDnsLength: false)
-        eL.innerHTML += '<h3>... verifyDnsLength: false</h3>';
+        // --- method toAscii (verifyDNSLength: false)
+        eL.innerHTML += '<h3>... verifyDNSLength: false</h3>';
         tmp = data.toAsciiVerifyDnsLength0;
         Object.keys(tmp).forEach((key) => {
-          let val = uts46.toAscii(key, { verifyDnsLength: false });
+          let val = uts46.toAscii(key, { verifyDNSLength: false });
           const ok = tmp[key] === val;
           if (/^[\s ]*$/.test(key)) {
             key = `&quot;${key}&quot;`;
@@ -300,13 +299,13 @@
           }</b> ${key}: ${val}</div>`;
         });
 
-        // --- method toAscii (verifyDnsLength: true, throws)
-        eL.innerHTML += '<h3>... throws & verifyDnsLength: true</h3>';
+        // --- method toAscii (verifyDNSLength: true, throws)
+        eL.innerHTML += '<h3>... throws & verifyDNSLength: true</h3>';
         tmp = data.toAsciiVerifyDnsLength1throws;
         tmp.forEach((val) => {
           let ok;
           try {
-            uts46.toAscii(val, { verifyDnsLength: true });
+            uts46.toAscii(val, { verifyDNSLength: true });
             ok = false;
           } catch (e) {
             ok = true;
@@ -319,13 +318,13 @@
           }</b> ${val}</div>`;
         });
 
-        // --- method toAscii (verifyDnsLength: true, throws not)
-        eL.innerHTML += '<h3>... throws not & verifyDnsLength: true</h3>';
+        // --- method toAscii (verifyDNSLength: true, throws not)
+        eL.innerHTML += '<h3>... throws not & verifyDNSLength: true</h3>';
         tmp = data.toAsciiVerifyDnsLength1throwsnot;
         tmp.forEach((val) => {
           let ok;
           try {
-            uts46.toAscii(val, { verifyDnsLength: true });
+            uts46.toAscii(val, { verifyDNSLength: true });
             ok = true;
           } catch (e) {
             ok = false;

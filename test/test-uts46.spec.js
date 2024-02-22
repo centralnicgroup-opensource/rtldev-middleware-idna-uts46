@@ -52,46 +52,43 @@ suite('toASCII', function () {
     // Check verify DNS length
     assert.strict.equal(
       uts46.toAscii('', {
-        verifyDnsLength: false,
+        verifyDNSLength: false,
       }),
       '',
     );
-    // TODO: this throwed in previous major version
-    /*assert.throws(function () {
+    assert.throws(function () {
       uts46.toAscii('', {
-        verifyDnsLength: true,
-      });
-    });*/
-  });
-  test('Verify DNS length parameter', function () {
-    // TODO: this throwed in previous major version
-    /*assert.throws(function () {
-      uts46.toAscii('this..is.almost.right', {
-        transitionalProcessing: false,
-        verifyDnsLength: true,
-      });
-    });*/
-    // TODO: this throwed in previous major version
-    /*assert.throws(function () {
-      uts46.toAscii('a.'.repeat(252 / 2) + 'aa', {
-        verifyDnsLength: true,
-      });
-    });*/
-    assert.doesNotThrow(function () {
-      // Exactly 253 characters.
-      uts46.toAscii('a.'.repeat(252 / 2) + 'a', {
-        verifyDnsLength: true,
+        verifyDNSLength: true,
       });
     });
-    // TODO: this throwed in previous major version
-    /*assert.throws(function () {
-      uts46.toAscii('a'.repeat(64), {
-        verifyDnsLength: true,
+  });
+  test('Verify DNS length parameter', function () {
+    assert.throws(function () {
+      uts46.toAscii('this..is.almost.right', {
+        transitionalProcessing: false,
+        verifyDNSLength: true,
       });
-    });*/
+    });
+    assert.throws(function () {
+      // 254 characters
+      uts46.toAscii('a.'.repeat(126) + 'aa', {
+        verifyDNSLength: true,
+      });
+    });
+    assert.doesNotThrow(function () {
+      // 253 characters
+      uts46.toAscii('a.'.repeat(126) + 'a', {
+        verifyDNSLength: true,
+      });
+    });
+    assert.throws(function () {
+      uts46.toAscii('a'.repeat(64), {
+        verifyDNSLength: true,
+      });
+    });
     assert.doesNotThrow(function () {
       uts46.toAscii('a'.repeat(63), {
-        verifyDnsLength: true,
+        verifyDNSLength: true,
       });
     });
     // Default is to not verify it.
