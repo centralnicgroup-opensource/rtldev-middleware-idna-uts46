@@ -1,3 +1,10 @@
+## [6.0.2](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.1...v6.0.2) (2024-2-23)
+
+
+### Bug Fixes
+
+* **readme:** review note about performance ([e38a99c](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/e38a99cfbce8ce31bf26efcc5b508fe945928f13))
+
 ## [6.0.1](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.0...v6.0.1) (2024-2-23)
 
 
