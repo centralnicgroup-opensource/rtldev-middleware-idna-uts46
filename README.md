@@ -36,7 +36,7 @@ In general, we don't see a blocker for upgrading to v6. Still, consider the belo
 
 #### Performance
 
-We haven't tested for this explicitely, but as we dropped the IDNA mapping table on our end by the Migration to package `tr46`, there's no longer a compression included for it as that table is no longer directly in our hands. This was a great way for improving the page load time on browser side. Maintainability + Efforts > Performance. This may again change in future, but needs resources assigned. PR = welcome.
+We haven't tested for this explicitely, but as we dropped the IDNA mapping table on our end by the Migration to package `tr46`, there's no longer a compression included for it as that table is no longer directly in our hands. This was a great way for improving the page load time on browser side. Maintainability + Efforts > Performance. In addition, the `lib/mappingTable.json` of tr46 uses a different structure than we used on our end. The issues we noticed with our way do not apply here. By that, there's maybe not a performance issue applying.
 
 #### New Labels for Options
 
