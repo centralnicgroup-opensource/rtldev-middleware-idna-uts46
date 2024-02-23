@@ -1,42 +1,48 @@
 import tr46 from 'tr46';
 
-function getDefaultOptions(domain) {
+function getDefaultOptions(domainName) {
   return {
-    transitionalProcessing: !domain.match(
+    transitionalProcessing: !domainName.match(
       /\.(?:be|ca|de|swiss|fr|pm|re|tf|wf|yt)\.?$/,
     ),
   };
 }
 
-function toAscii(domain, opts = {}) {
-  const pc = tr46.toASCII(domain, { ...getDefaultOptions(domain), ...opts });
+function toAscii(domainName, options = {}) {
+  const pc = tr46.toASCII(domainName, {
+    ...getDefaultOptions(domainName),
+    ...options,
+  });
   if (pc !== null) {
     return pc;
   }
-  throw new Error(`Unable to translate ${domain} to ASCII.`);
+  throw new Error(`Unable to translate ${domainName} to ASCII.`);
 }
 
-function toUnicode(domain, opts = {}) {
-  const idn = tr46.toUnicode(domain, { ...getDefaultOptions(domain), ...opts });
+function toUnicode(domainName, options = {}) {
+  const idn = tr46.toUnicode(domainName, {
+    ...getDefaultOptions(domainName),
+    ...options,
+  });
   if (idn !== null && !idn.error) {
     return idn.domain;
   }
-  throw new Error(`Unable to translate ${domain} to Unicode.`);
+  throw new Error(`Unable to translate ${domainName} to Unicode.`);
 }
 
-function convert(domains) {
-  const isArrayInput = Array.isArray(domains);
+function convert(domainNames, options = {}) {
+  const isArrayInput = Array.isArray(domainNames);
   if (!isArrayInput) {
-    domains = [domains];
+    domainNames = [domainNames];
   }
   const results = { IDN: [], PC: [] };
-  domains.forEach((domain) => {
+  domainNames.forEach((domainName) => {
     try {
-      results.PC.push(toAscii(domain));
-      results.IDN.push(toUnicode(domain));
+      results.PC.push(toAscii(domainName, options));
+      results.IDN.push(toUnicode(domainName, options));
     } catch (e) {
-      results.PC.push(domain);
-      results.IDN.push(domain);
+      results.PC.push(domainName);
+      results.IDN.push(domainName);
     }
   });
 

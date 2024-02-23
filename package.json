@@ -5,6 +5,7 @@
   "private": false,
   "type": "module",
   "main": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
   "license": "MIT",
   "sideEffects": false,
   "engines": {
