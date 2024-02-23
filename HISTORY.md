@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.0...v6.0.1) (2024-2-23)
+
+
+### Bug Fixes
+
+* **build:** add missing type definitions ([4a152c8](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/4a152c8984f130a252a4cb295d5b07fde874b7a7))
+
 # [6.0.0](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v5.1.2...v6.0.0) (2024-2-22)
 
 
