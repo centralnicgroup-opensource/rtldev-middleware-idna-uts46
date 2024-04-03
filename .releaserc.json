@@ -11,8 +11,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "npm run prepare",
-        "successCmd": "gulp -f gulpfile.cjs publishNotification --update \"${nextRelease.version}\" --type \"${nextRelease.type}\" --notes \"${encodeURIComponent(nextRelease.notes)}\""
+        "prepareCmd": "npm run prepare"
       }
     ],
     "@semantic-release/npm",
@@ -29,6 +28,7 @@
         ]
       }
     ],
+    "semantic-release-teams-notify-plugin",
     "@semantic-release/github"
   ]
 }
