@@ -1,3 +1,10 @@
+## [6.0.4](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.3...v6.0.4) (2024-04-10)
+
+
+### Bug Fixes
+
+* **deps:** bump tar and npm ([3a64d37](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/3a64d3769e350df71ef901bbd065c5205468d081))
+
 ## [6.0.3](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.2...v6.0.3) (2024-3-1)
 
 
