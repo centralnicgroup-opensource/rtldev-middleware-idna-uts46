@@ -18,7 +18,7 @@ the full mapping for these strings, as defined by
 
 ## Resources
 
-- [Documentation](https://centralnicgroup-public.github.io/rtldev-middleware-documentation/docs/hexonet/idna-uts46/)
+- [Documentation](https://support.centralnicreseller.com/hc/en-gb/articles/13509920188061-JavaScript-based-IDN-Converter)
 - [Release Notes](https://github.com/hexonet/idna-uts46/releases)
 
 ## v6 Notes & Migration Guide
