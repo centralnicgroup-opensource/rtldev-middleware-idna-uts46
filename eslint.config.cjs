@@ -1,5 +1,5 @@
-const globals = require("globals");
-const recommended = require("@eslint/js").configs.recommended;
+const globals = require('globals');
+const recommended = require('@eslint/js').configs.recommended;
 
 module.exports = {
   ...recommended,
@@ -8,21 +8,16 @@ module.exports = {
     sourceType: 'module',
     globals: {
       ...globals.es6,
-      ...globals.node
+      ...globals.node,
     },
   },
   ...{
-    files: [ 'test/*.js' ],
+    files: ['test/*.js'],
     languageOptions: {
       globals: {
-       ...globals.mocha,
-      }
-    }
+        ...globals.mocha,
+      },
+    },
   },
-  ignores: [
-      "dist",
-      "test/index.bundle.js",
-      "test/index.mjs",
-      "test/mocha.css"
-  ]
-};  
+  ignores: ['dist', 'test/index.bundle.js', 'test/index.mjs', 'test/mocha.css'],
+};
