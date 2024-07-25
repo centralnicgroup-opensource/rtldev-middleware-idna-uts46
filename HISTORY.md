@@ -1,3 +1,10 @@
+## [6.0.5](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.4...v6.0.5) (2024-07-25)
+
+
+### Performance Improvements
+
+* **index.php:** extend transitional TLDs array with '.art' TLD ([759e00d](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/759e00d0333b37c7ddf8d581c0b785d9fd04d4c3))
+
 ## [6.0.4](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.3...v6.0.4) (2024-04-10)
 
 
