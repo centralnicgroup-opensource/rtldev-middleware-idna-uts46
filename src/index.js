@@ -3,7 +3,7 @@ import tr46 from 'tr46';
 function getDefaultOptions(domainName) {
   return {
     transitionalProcessing: !domainName.match(
-      /\.(?:be|ca|de|swiss|fr|pm|re|tf|wf|yt)\.?$/,
+      /\.(?:art|be|ca|de|swiss|fr|pm|re|tf|wf|yt)\.?$/,
     ),
   };
 }
