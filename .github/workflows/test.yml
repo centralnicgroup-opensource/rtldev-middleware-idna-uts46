@@ -25,7 +25,7 @@ jobs:
       - name: Install node dependencies
         run: npm ci
       - name: Super Linter Code Base
-        uses: github/super-linter/slim@v6
+        uses: github/super-linter/slim@v7
         env:
           FILTER_REGEX_INCLUDE: '.*.js|*.js|/scripts/*|/src/*|/test/*'
           DEFAULT_BRANCH: master
