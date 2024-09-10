@@ -25,7 +25,7 @@
   "scripts": {
     "prettier": "prettier -u --write \"**/*\"",
     "build": "rollup -c rollup-esm.config.mjs",
-    "pretest": "npm run build",
+    "pretest": "npm run prepare",
     "test": "mocha",
     "test:coverage": "c8 --reporter=html mocha",
     "posttest:coverage": "vite --config vite.config.coverage.js",
