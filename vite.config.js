@@ -6,6 +6,6 @@ export default defineConfig({
     root: 'test',
     port: 8080,
     strictPort: true,
-    open: '/test/test-esm.html'
+    open: '/test/index.html'
   }
 });
