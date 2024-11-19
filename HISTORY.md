@@ -1,3 +1,10 @@
+## [6.0.6](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.5...v6.0.6) (2024-11-19)
+
+
+### Bug Fixes
+
+* **deps:** bump cross-spawn from 7.0.3 to 7.0.5 ([e1c0581](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/e1c0581ca82a0abe1642c72cf8ae0608fb414fe3))
+
 ## [6.0.5](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.4...v6.0.5) (2024-07-25)
 
 
