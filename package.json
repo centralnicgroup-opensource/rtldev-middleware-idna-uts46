@@ -59,7 +59,7 @@
     "semantic-release": "^24.0.0",
     "semantic-release-teams-notify-plugin": "github:centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin",
     "terser": "^5.19.4",
-    "vite": "^5.4.3"
+    "vite": "^6.0.3"
   },
   "lint-staged": {
     "*": "prettier -u --write"
