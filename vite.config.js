@@ -6,6 +6,6 @@ export default defineConfig({
     root: 'test',
     port: 8080,
     strictPort: true,
-    open: '/test/index.html'
-  }
+    open: '/test/index.html',
+  },
 });

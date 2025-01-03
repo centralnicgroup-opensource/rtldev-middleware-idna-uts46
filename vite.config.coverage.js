@@ -6,6 +6,6 @@ export default defineConfig({
     root: 'coverage',
     port: 8080,
     strictPort: true,
-    open: '/coverage/index.html'
-  }
+    open: '/coverage/index.html',
+  },
 });
