@@ -52,14 +52,14 @@
     "c8": "^10.0.0",
     "eslint": "^9.1.1",
     "lint-staged": "^15.0.1",
-    "mocha": "^10.2.0",
+    "mocha": "^11.0.1",
     "prettier": "^3.0.0",
     "rollup": "^4.0.0",
     "rollup-plugin-bundle-size": "^1.0.3",
     "semantic-release": "^24.0.0",
     "semantic-release-teams-notify-plugin": "github:centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin",
     "terser": "^5.19.4",
-    "vite": "^5.4.3"
+    "vite": "^6.0.7"
   },
   "lint-staged": {
     "*": "prettier -u --write"
