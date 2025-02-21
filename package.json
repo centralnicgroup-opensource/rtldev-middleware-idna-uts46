@@ -36,7 +36,8 @@
   },
   "overrides": {
     "glob-parent": "^6.0.2",
-    "chokidar": "^3.5.3"
+    "chokidar": "^3.5.3",
+    "esbuild": "^0.25.0"
   },
   "dependencies": {
     "tr46": "^5.0.0"
@@ -59,7 +60,7 @@
     "semantic-release": "^24.0.0",
     "semantic-release-teams-notify-plugin": "github:centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin",
     "terser": "^5.19.4",
-    "vite": "^6.0.7"
+    "vite": "^6.1.1"
   },
   "lint-staged": {
     "*": "prettier -u --write"
