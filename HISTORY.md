@@ -1,3 +1,10 @@
+## [6.0.9](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.8...v6.0.9) (2025-07-23)
+
+
+### Bug Fixes
+
+* **npm:** rebuild after upgrade vite to v7 ([e346382](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/e3463822f0f38c9c6cccb44d1a9e5634222a50c1))
+
 ## [6.0.8](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.7...v6.0.8) (2025-04-17)
 
 
