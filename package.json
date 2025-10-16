@@ -57,7 +57,7 @@
     "prettier": "^3.0.0",
     "rollup": "^4.0.0",
     "rollup-plugin-bundle-size": "^1.0.3",
-    "semantic-release": "^24.0.0",
+    "semantic-release": "^25.0.0",
     "semantic-release-teams-notify-plugin": "github:centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin",
     "terser": "^5.19.4",
     "vite": "^7.0.5"
