@@ -6,30 +6,5 @@ on:
 
 jobs:
   release:
-    name: Release Job @ ubuntu-latest
-    runs-on: ${{ vars.RTLDEV_MW_CI_OS }}
-    permissions:
-      contents: write
-      issues: write
-      deployments: write
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - name: Setup NodeJS ${{ vars.RTLDEV_MW_CI_NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ vars.RTLDEV_MW_CI_NODE_VERSION }}
-          check-latest: true
-      - name: Install dependencies
-        run: npm ci
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.RTLDEV_MW_CI_TOKEN }}
-          NPM_TOKEN: ${{ secrets.RTLDEV_MW_CI_NPM_TOKEN }}
-          TEAMS_NOTIFICATION_URI: ${{ secrets.RTLDEV_MW_CI_NOTIFICATION_URI }}
-          COMMIT_SHA: ${{ github.sha }}
-        run: npx semantic-release
+    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-release.yml@main
+    secrets: inherit

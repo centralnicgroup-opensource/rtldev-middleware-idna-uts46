@@ -1,65 +1,11 @@
-name: Test
+name: Dependabot auto-merge & tests
 on:
-  workflow_call:
-  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 jobs:
-  test:
-    name: 🧪 Linting
-    runs-on: ${{ vars.RTLDEV_MW_CI_OS }}
-    permissions:
-      contents: read
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - name: Setup NodeJS @ ${{ vars.RTLDEV_MW_CI_NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ vars.RTLDEV_MW_CI_NODE_VERSION }}
-          check-latest: true
-          cache: 'npm'
-      - name: Install node dependencies
-        run: npm ci
-      - name: Super Linter Code Base
-        uses: github/super-linter/slim@v7
-        env:
-          FILTER_REGEX_INCLUDE: '.*.js|*.js|/scripts/*|/src/*|/test/*'
-          DEFAULT_BRANCH: master
-          VALIDATE_JAVASCRIPT_ES: true
-          VALIDATE_TYPESCRIPT_ES: true
-          VALIDATE_BASH: true
-          VALIDATE_ALL_CODEBASE: false
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  test_matrix:
-    strategy:
-      matrix:
-        node-version:
-          - ${{ vars.RTLDEV_MW_CI_NODE_VERSION }}
-
-    name: 🧪 Testing
-    runs-on: ${{ vars.RTLDEV_MW_CI_OS }}
-    needs: test
-    permissions:
-      contents: read
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - name: Use NodeJS @ ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          check-latest: true
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Run test
-        run: npm run test --silent >/dev/null
+  tests:
+    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-test.yml@main
+    secrets: inherit
