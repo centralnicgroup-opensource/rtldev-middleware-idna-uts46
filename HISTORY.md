@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.9...v6.1.0) (2025-10-27)
+
+
+### Features
+
+* **deps:** upgrade tr46 upgraded to v6.0.0, requiring Node.js v22+ and Unicode v17+ ([9d8de48](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/9d8de481a4b7dbd0ccf9733b93ea7a824e0879c2))
+
 ## [6.0.9](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.8...v6.0.9) (2025-07-23)
 
 
