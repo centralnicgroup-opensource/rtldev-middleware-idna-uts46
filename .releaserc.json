@@ -11,7 +11,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "npm run prepare"
+        "prepareCmd": "pnpm run prepare"
       }
     ],
     "@semantic-release/npm",
