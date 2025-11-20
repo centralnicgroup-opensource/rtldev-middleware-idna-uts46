@@ -4,6 +4,8 @@ test/IdnaTest.txt
 npm-debug.log*
 .nyc_output
 .vscode
+package-lock.json
+yarn.lock
 test/mocha.css
 test/index.mjs
 test/index.bundle.js

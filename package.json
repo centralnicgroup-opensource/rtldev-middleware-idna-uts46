@@ -9,8 +9,7 @@
   "license": "MIT",
   "sideEffects": false,
   "engines": {
-    "node": "^22.14.0 || >= 24.10.0",
-    "npm": ">=11.6.1"
+    "node": "^22.14.0 || >= 24.10.0"
   },
   "homepage": "https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46",
   "repository": "github:centralnicgroup-opensource/rtldev-middleware-idna-uts46",
