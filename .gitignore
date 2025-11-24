@@ -1,11 +1,12 @@
 coverage
-node_modules
 test/IdnaTest.txt
+node_modules
+.pnpm-store
 npm-debug.log*
-.nyc_output
-.vscode
 package-lock.json
 yarn.lock
+.nyc_output
+.vscode
 test/mocha.css
 test/index.mjs
 test/index.bundle.js
