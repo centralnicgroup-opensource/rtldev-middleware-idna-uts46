@@ -1,3 +1,10 @@
+## [6.1.1](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.0...v6.1.1) (2026-02-21)
+
+
+### Bug Fixes
+
+* **deps:** bump lodash-es from 4.17.21 to 4.17.23 ([61751d1](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/61751d1f6727b035cfc69e8cb06f0a497d910003))
+
 # [6.1.0](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.0.9...v6.1.0) (2025-10-27)
 
 
