@@ -10,3 +10,4 @@ yarn.lock
 test/mocha.css
 test/index.mjs
 test/index.bundle.js
+dist/index*

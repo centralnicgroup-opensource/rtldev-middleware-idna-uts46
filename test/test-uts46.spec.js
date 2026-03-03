@@ -11,6 +11,10 @@ suite('toASCII', function () {
       IDN: 'öbb.at',
       PC: 'xn--bb-eka.at',
     });
+    assert.strict.deepEqual(uts46.convert('xn----5da7e.de'), {
+      IDN: 'ä-ü.de',
+      PC: 'xn----zfa7e.de',
+    });
     assert.strict.deepEqual(uts46.convert(['öbb.at', 'faß.de']), {
       IDN: ['öbb.at', 'faß.de'],
       PC: ['xn--bb-eka.at', 'xn--fa-hia.de'],
@@ -115,6 +119,7 @@ suite('toUnicode', function () {
     assert.strict.equal(uts46.toUnicode('Öbb.at'), 'öbb.at');
     assert.strict.equal(uts46.toUnicode('O\u0308bb.at'), 'öbb.at');
     assert.strict.equal(uts46.toUnicode('xn--bb-eka.at'), 'öbb.at');
+    assert.strict.equal(uts46.toUnicode('xn----5da7e.de'), 'ä-ü.de');
     assert.strict.equal(uts46.toUnicode('faß.de'), 'faß.de');
     assert.strict.equal(uts46.toUnicode('fass.de'), 'fass.de');
     assert.strict.equal(uts46.toUnicode('xn--fa-hia.de'), 'faß.de');

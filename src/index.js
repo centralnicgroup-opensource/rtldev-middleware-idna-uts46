@@ -25,7 +25,13 @@ function toUnicode(domainName, options = {}) {
     ...options,
   });
   if (idn !== null && !idn.error) {
-    return idn.domain;
+    return idn.domain.toLocaleLowerCase();
+  }
+  if (idn !== null && /(^|\.)xn--/i.test(domainName)) {
+    const lowercaseDomainName = idn.domain.toLocaleLowerCase();
+    if (lowercaseDomainName !== idn.domain) {
+      return lowercaseDomainName;
+    }
   }
   throw new Error(`Unable to translate ${domainName} to Unicode.`);
 }
@@ -38,9 +44,11 @@ function convert(domainNames, options = {}) {
   const results = { IDN: [], PC: [] };
   domainNames.forEach((domainName) => {
     try {
-      results.PC.push(toAscii(domainName, options));
-      results.IDN.push(toUnicode(domainName, options));
-    } catch (e) {
+      const uc = toUnicode(domainName, options);
+      const pc = toAscii(uc, options);
+      results.IDN.push(uc);
+      results.PC.push(pc);
+    } catch {
       results.PC.push(domainName);
       results.IDN.push(domainName);
     }
