@@ -1,3 +1,10 @@
+## [6.1.2](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.1...v6.1.2) (2026-03-03)
+
+
+### Bug Fixes
+
+* **index.js:** Update toUnicode function to return lowercase domain names for IDN ([ce020fb](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/ce020fb3a2b5a0789ce8e601fc729159d0695287))
+
 ## [6.1.1](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.0...v6.1.1) (2026-02-21)
 
 
