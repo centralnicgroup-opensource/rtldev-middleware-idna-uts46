@@ -1,3 +1,10 @@
+## [6.1.3](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.2...v6.1.3) (2026-03-03)
+
+
+### Bug Fixes
+
+* **pnpm-workspace:** add dependency overrides for security updates ([6e35b9a](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/6e35b9a19db0e7a418dbed4ab1b9d58c8638bf0e))
+
 ## [6.1.2](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.1...v6.1.2) (2026-03-03)
 
 
