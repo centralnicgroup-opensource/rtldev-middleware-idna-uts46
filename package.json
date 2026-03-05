@@ -6,6 +6,9 @@
   "type": "module",
   "main": "dist/index.mjs",
   "typings": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "license": "MIT",
   "sideEffects": false,
   "engines": {
