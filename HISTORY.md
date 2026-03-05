@@ -1,3 +1,10 @@
+## [6.1.5](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.4...v6.1.5) (2026-03-05)
+
+
+### Bug Fixes
+
+* **package.json:** include 'src/' directory in 'files' field ([1732661](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/1732661a9ef235557577852716702af5519483f9))
+
 ## [6.1.4](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.3...v6.1.4) (2026-03-05)
 
 
