@@ -21,7 +21,7 @@ importers:
         version: 10.0.1(eslint@10.0.2)
       '@rollup/plugin-commonjs':
         specifier: ^29.0.1
-        version: 29.0.1(rollup@4.59.0)
+        version: 29.0.2(rollup@4.59.0)
       '@rollup/plugin-json':
         specifier: ^6.1.0
         version: 6.1.0(rollup@4.59.0)
@@ -69,7 +69,7 @@ importers:
         version: 25.0.3
       semantic-release-teams-notify-plugin:
         specifier: github:centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin
-        version: https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/e67abf28ee7e67095b2cfc0d7c6cb620c9ddb51a
+        version: https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/3fd8549148d6842ecfaa26e5e70ff10e40cdd65d
       terser:
         specifier: ^5.46.0
         version: 5.46.0
@@ -406,8 +406,8 @@ packages:
     resolution: {integrity: sha512-h104Kh26rR8tm+a3Qkc5S4VLYint3FE48as7+/5oCEcKR2idC/pF1G6AhIXKI+eHPJa/3J9i5z0Al47IeGHPkA==}
     engines: {node: '>=12'}
 
-  '@rollup/plugin-commonjs@29.0.1':
-    resolution: {integrity: sha512-VUEHINN2rQEWPfNUR3mzidRObM1XZKXMQsaG6qBlDqd6M1qyw91nDZvcSozgyjt3x/QKrgKBc5MdxfdxAy6tdg==}
+  '@rollup/plugin-commonjs@29.0.2':
+    resolution: {integrity: sha512-S/ggWH1LU7jTyi9DxZOKyxpVd4hF/OZ0JrEbeLjXk/DFXwRny0tjD2c992zOUYQobLrVkRVMDdmHP16HKP7GRg==}
     engines: {node: '>=16.0.0 || 14 >= 14.17'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0||^4.0.0
@@ -1956,8 +1956,8 @@ packages:
   safe-buffer@5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
 
-  semantic-release-teams-notify-plugin@https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/e67abf28ee7e67095b2cfc0d7c6cb620c9ddb51a:
-    resolution: {tarball: https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/e67abf28ee7e67095b2cfc0d7c6cb620c9ddb51a}
+  semantic-release-teams-notify-plugin@https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/3fd8549148d6842ecfaa26e5e70ff10e40cdd65d:
+    resolution: {tarball: https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/3fd8549148d6842ecfaa26e5e70ff10e40cdd65d}
     version: 1.0.0
     engines: {node: '>=21.6.2', npm: '>=10.2.4'}
 
@@ -2647,7 +2647,7 @@ snapshots:
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
 
-  '@rollup/plugin-commonjs@29.0.1(rollup@4.59.0)':
+  '@rollup/plugin-commonjs@29.0.2(rollup@4.59.0)':
     dependencies:
       '@rollup/pluginutils': 5.3.0(rollup@4.59.0)
       commondir: 1.0.1
@@ -4141,7 +4141,7 @@ snapshots:
 
   safe-buffer@5.1.2: {}
 
-  semantic-release-teams-notify-plugin@https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/e67abf28ee7e67095b2cfc0d7c6cb620c9ddb51a:
+  semantic-release-teams-notify-plugin@https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/3fd8549148d6842ecfaa26e5e70ff10e40cdd65d:
     dependencies:
       '@semantic-release/error': 4.0.0
       aggregate-error: 5.0.0
