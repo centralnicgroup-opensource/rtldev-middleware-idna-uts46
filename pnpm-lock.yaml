@@ -51,7 +51,7 @@ importers:
         version: 17.4.0
       lint-staged:
         specifier: ^16.3.2
-        version: 16.3.2
+        version: 16.3.3
       mocha:
         specifier: ^11.7.5
         version: 11.7.5
@@ -69,7 +69,7 @@ importers:
         version: 25.0.3
       semantic-release-teams-notify-plugin:
         specifier: github:centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin
-        version: https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/e67abf28ee7e67095b2cfc0d7c6cb620c9ddb51a
+        version: https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/3fd8549148d6842ecfaa26e5e70ff10e40cdd65d
       terser:
         specifier: ^5.46.0
         version: 5.46.0
@@ -1451,8 +1451,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lint-staged@16.3.2:
-    resolution: {integrity: sha512-xKqhC2AeXLwiAHXguxBjuChoTTWFC6Pees0SHPwOpwlvI3BH7ZADFPddAdN3pgo3aiKgPUx/bxE78JfUnxQnlg==}
+  lint-staged@16.3.3:
+    resolution: {integrity: sha512-RLq2koZ5fGWrx7tcqx2tSTMQj4lRkfNJaebO/li/uunhCJbtZqwTuwPHpgIimAHHi/2nZIiGrkCHDCOeR1onxA==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -1956,8 +1956,8 @@ packages:
   safe-buffer@5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
 
-  semantic-release-teams-notify-plugin@https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/e67abf28ee7e67095b2cfc0d7c6cb620c9ddb51a:
-    resolution: {tarball: https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/e67abf28ee7e67095b2cfc0d7c6cb620c9ddb51a}
+  semantic-release-teams-notify-plugin@https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/3fd8549148d6842ecfaa26e5e70ff10e40cdd65d:
+    resolution: {tarball: https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/3fd8549148d6842ecfaa26e5e70ff10e40cdd65d}
     version: 1.0.0
     engines: {node: '>=21.6.2', npm: '>=10.2.4'}
 
@@ -3673,7 +3673,7 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lint-staged@16.3.2:
+  lint-staged@16.3.3:
     dependencies:
       commander: 14.0.3
       listr2: 9.0.5
@@ -4141,7 +4141,7 @@ snapshots:
 
   safe-buffer@5.1.2: {}
 
-  semantic-release-teams-notify-plugin@https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/e67abf28ee7e67095b2cfc0d7c6cb620c9ddb51a:
+  semantic-release-teams-notify-plugin@https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/3fd8549148d6842ecfaa26e5e70ff10e40cdd65d:
     dependencies:
       '@semantic-release/error': 4.0.0
       aggregate-error: 5.0.0
