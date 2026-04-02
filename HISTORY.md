@@ -1,3 +1,10 @@
+## [6.1.7](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.6...v6.1.7) (2026-04-02)
+
+
+### Bug Fixes
+
+* **pnpm:** uggraded dependencies and regenerated lockfile ([0a6141d](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/0a6141d2e81b16f65a5cf93c2ec3a856172ce54b))
+
 ## [6.1.6](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.5...v6.1.6) (2026-04-02)
 
 
