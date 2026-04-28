@@ -72,10 +72,10 @@ importers:
         version: https://codeload.github.com/centralnicgroup-opensource/rtldev-middleware-semantic-release-notify-plugin/tar.gz/3fd8549148d6842ecfaa26e5e70ff10e40cdd65d
       terser:
         specifier: ^5.46.0
-        version: 5.46.1
+        version: 5.46.2
       vite:
         specifier: ^8.0.3
-        version: 8.0.10(esbuild@0.27.5)(terser@5.46.1)(yaml@2.8.3)
+        version: 8.0.10(esbuild@0.27.5)(terser@5.46.2)(yaml@2.8.3)
 
 packages:
 
@@ -2341,8 +2341,8 @@ packages:
     resolution: {integrity: sha512-d79HhZya5Djd7am0q+W4RTsSU+D/aJzM+4Y4AGJGuGlgM2L6sx5ZvOYTmZjqPhrDrV6xJTtRSm1JCLj6V6LHLQ==}
     engines: {node: '>=14.16'}
 
-  terser@5.46.1:
-    resolution: {integrity: sha512-vzCjQO/rgUuK9sf8VJZvjqiqiHFaZLnOiimmUuOKODxWL8mm/xua7viT7aqX7dgPY60otQjUotzFMmCB4VdmqQ==}
+  terser@5.46.2:
+    resolution: {integrity: sha512-uxfo9fPcSgLDYob/w1FuL0c99MWiJDnv+5qXSQc5+Ki5NjVNsYi66INnMFBjf6uFz6OnX12piJQPF4IpjJTNTw==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2962,7 +2962,7 @@ snapshots:
     dependencies:
       serialize-javascript: 7.0.5
       smob: 1.6.1
-      terser: 5.46.1
+      terser: 5.46.2
     optionalDependencies:
       rollup: 4.60.2
 
@@ -4705,7 +4705,7 @@ snapshots:
       type-fest: 2.19.0
       unique-string: 3.0.0
 
-  terser@5.46.1:
+  terser@5.46.2:
     dependencies:
       '@jridgewell/source-map': 0.3.11
       acorn: 8.16.0
@@ -4813,7 +4813,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite@8.0.10(esbuild@0.27.5)(terser@5.46.1)(yaml@2.8.3):
+  vite@8.0.10(esbuild@0.27.5)(terser@5.46.2)(yaml@2.8.3):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -4823,7 +4823,7 @@ snapshots:
     optionalDependencies:
       esbuild: 0.27.5
       fsevents: 2.3.3
-      terser: 5.46.1
+      terser: 5.46.2
       yaml: 2.8.3
 
   web-worker@1.5.0: {}
