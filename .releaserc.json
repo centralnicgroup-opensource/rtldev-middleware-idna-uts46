@@ -28,7 +28,7 @@
         ]
       }
     ],
-    "semantic-release-teams-notify-plugin",
+    "@team-internet/semantic-release-plugins/teams-notify",
     "@semantic-release/github"
   ]
 }
