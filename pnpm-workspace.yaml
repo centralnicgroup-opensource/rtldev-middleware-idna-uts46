@@ -7,3 +7,4 @@ allowBuilds:
 overrides:
   diff@>=6.0.0 <8.0.3: '>=8.0.3'
   serialize-javascript@<=7.0.2: '>=7.0.3'
+minimumReleaseAge: 0
