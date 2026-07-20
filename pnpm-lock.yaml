@@ -18,7 +18,7 @@ importers:
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
-        version: 10.0.1(eslint@10.7.0)
+        version: 10.0.1(eslint@10.7.0(supports-color@8.1.1))
       '@rollup/plugin-commonjs':
         specifier: ^29.0.3
         version: 29.0.3(rollup@4.62.2)
@@ -33,13 +33,13 @@ importers:
         version: 1.0.0(rollup@4.62.2)
       '@semantic-release/changelog':
         specifier: ^6.0.3
-        version: 6.0.3(semantic-release@25.0.8)
+        version: 6.0.3(semantic-release@25.0.8(supports-color@8.1.1))
       '@semantic-release/exec':
         specifier: ^7.1.0
-        version: 7.1.0(semantic-release@25.0.8)
+        version: 7.1.0(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)
       '@semantic-release/git':
         specifier: ^10.0.1
-        version: 10.0.1(semantic-release@25.0.8)
+        version: 10.0.1(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)
       '@team-internet/semantic-release-plugins':
         specifier: ^1.0.7
         version: 1.0.7
@@ -48,7 +48,7 @@ importers:
         version: 11.0.0
       eslint:
         specifier: ^10.7.0
-        version: 10.7.0
+        version: 10.7.0(supports-color@8.1.1)
       globals:
         specifier: ^17.7.0
         version: 17.7.0
@@ -69,7 +69,7 @@ importers:
         version: 1.0.3
       semantic-release:
         specifier: ^25.0.8
-        version: 25.0.8
+        version: 25.0.8(supports-color@8.1.1)
       terser:
         specifier: ^5.49.0
         version: 5.49.0
@@ -1868,8 +1868,8 @@ packages:
     resolution: {integrity: sha512-C+VUP+8jis7EsQZIhDYmS5qlNtjv2yP4SNtjXK9AP1ZcTRlnSfuumaTnRfYZnYgUUYVIKqL0fRvmUGDV2fmp6g==}
     engines: {node: '>=4'}
 
-  postcss@8.5.19:
-    resolution: {integrity: sha512-Mz8SaolMd8nB+G13WkORcxQKHZ/NE4xXevtkJHVuG+guo9/wYKlIMTKAqGdEmYOXR2ijPjTYNHssizdaVSUNdQ==}
+  postcss@8.5.20:
+    resolution: {integrity: sha512-lW616l85ucIQL+FocMmL7pQFPqBmwejrCMg+iPxyImlrANNJG9NHq/RkyCZopDhd8C3LA03PHRJDjkbGu8vvug==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -2445,14 +2445,14 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@eslint-community/eslint-utils@4.9.1(eslint@10.7.0)':
+  '@eslint-community/eslint-utils@4.9.1(eslint@10.7.0(supports-color@8.1.1))':
     dependencies:
-      eslint: 10.7.0
+      eslint: 10.7.0(supports-color@8.1.1)
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.12.2': {}
 
-  '@eslint/config-array@0.23.5':
+  '@eslint/config-array@0.23.5(supports-color@8.1.1)':
     dependencies:
       '@eslint/object-schema': 3.0.5
       debug: 4.4.3(supports-color@8.1.1)
@@ -2468,9 +2468,9 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@eslint/js@10.0.1(eslint@10.7.0)':
+  '@eslint/js@10.0.1(eslint@10.7.0(supports-color@8.1.1))':
     optionalDependencies:
-      eslint: 10.7.0
+      eslint: 10.7.0(supports-color@8.1.1)
 
   '@eslint/object-schema@3.0.5': {}
 
@@ -2781,25 +2781,25 @@ snapshots:
 
   '@sec-ant/readable-stream@0.4.1': {}
 
-  '@semantic-release/changelog@6.0.3(semantic-release@25.0.8)':
+  '@semantic-release/changelog@6.0.3(semantic-release@25.0.8(supports-color@8.1.1))':
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
       fs-extra: 11.3.6
       lodash: 4.18.1
-      semantic-release: 25.0.8
+      semantic-release: 25.0.8(supports-color@8.1.1)
 
-  '@semantic-release/commit-analyzer@13.0.1(semantic-release@25.0.8)':
+  '@semantic-release/commit-analyzer@13.0.1(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       conventional-changelog-angular: 8.3.1
       conventional-changelog-writer: 8.4.0
       conventional-commits-filter: 5.0.0
       conventional-commits-parser: 6.4.0
       debug: 4.4.3(supports-color@8.1.1)
-      import-from-esm: 2.0.0
+      import-from-esm: 2.0.0(supports-color@8.1.1)
       lodash-es: 4.18.1
       micromatch: 4.0.8
-      semantic-release: 25.0.8
+      semantic-release: 25.0.8(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2807,7 +2807,7 @@ snapshots:
 
   '@semantic-release/error@4.0.0': {}
 
-  '@semantic-release/exec@7.1.0(semantic-release@25.0.8)':
+  '@semantic-release/exec@7.1.0(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       '@semantic-release/error': 4.0.0
       aggregate-error: 3.1.0
@@ -2815,11 +2815,11 @@ snapshots:
       execa: 9.6.1
       lodash-es: 4.18.1
       parse-json: 8.3.0
-      semantic-release: 25.0.8
+      semantic-release: 25.0.8(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@semantic-release/git@10.0.1(semantic-release@25.0.8)':
+  '@semantic-release/git@10.0.1(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       '@semantic-release/error': 3.0.0
       aggregate-error: 3.1.0
@@ -2829,11 +2829,11 @@ snapshots:
       lodash: 4.18.1
       micromatch: 4.0.8
       p-reduce: 2.1.0
-      semantic-release: 25.0.8
+      semantic-release: 25.0.8(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@semantic-release/github@12.0.9(semantic-release@25.0.8)':
+  '@semantic-release/github@12.0.9(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       '@octokit/core': 7.0.6
       '@octokit/plugin-paginate-rest': 14.0.0(@octokit/core@7.0.6)
@@ -2843,13 +2843,13 @@ snapshots:
       aggregate-error: 5.0.0
       debug: 4.4.3(supports-color@8.1.1)
       dir-glob: 3.0.1
-      http-proxy-agent: 9.1.0
-      https-proxy-agent: 9.1.0
+      http-proxy-agent: 9.1.0(supports-color@8.1.1)
+      https-proxy-agent: 9.1.0(supports-color@8.1.1)
       issue-parser: 7.0.2
       lodash-es: 4.18.1
       mime: 4.1.0
       p-filter: 4.1.0
-      semantic-release: 25.0.8
+      semantic-release: 25.0.8(supports-color@8.1.1)
       tinyglobby: 0.2.17
       undici: 7.28.0
       url-join: 5.0.0
@@ -2857,7 +2857,7 @@ snapshots:
       - kerberos
       - supports-color
 
-  '@semantic-release/npm@13.1.5(semantic-release@25.0.8)':
+  '@semantic-release/npm@13.1.5(semantic-release@25.0.8(supports-color@8.1.1))':
     dependencies:
       '@actions/core': 3.0.1
       '@semantic-release/error': 4.0.0
@@ -2872,21 +2872,21 @@ snapshots:
       rc: 1.2.8
       read-pkg: 10.1.0
       registry-auth-token: 5.1.1
-      semantic-release: 25.0.8
+      semantic-release: 25.0.8(supports-color@8.1.1)
       semver: 7.8.5
       tempy: 3.2.0
 
-  '@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.8)':
+  '@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       conventional-changelog-angular: 8.3.1
       conventional-changelog-writer: 8.4.0
       conventional-commits-filter: 5.0.0
       conventional-commits-parser: 6.4.0
       debug: 4.4.3(supports-color@8.1.1)
-      import-from-esm: 2.0.0
+      import-from-esm: 2.0.0(supports-color@8.1.1)
       lodash-es: 4.18.1
       read-package-up: 11.0.0
-      semantic-release: 25.0.8
+      semantic-release: 25.0.8(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -3230,11 +3230,11 @@ snapshots:
 
   eslint-visitor-keys@5.0.1: {}
 
-  eslint@10.7.0:
+  eslint@10.7.0(supports-color@8.1.1):
     dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@10.7.0)
+      '@eslint-community/eslint-utils': 4.9.1(eslint@10.7.0(supports-color@8.1.1))
       '@eslint-community/regexpp': 4.12.2
-      '@eslint/config-array': 0.23.5
+      '@eslint/config-array': 0.23.5(supports-color@8.1.1)
       '@eslint/config-helpers': 0.6.0
       '@eslint/core': 1.2.1
       '@eslint/plugin-kit': 0.7.2
@@ -3486,7 +3486,7 @@ snapshots:
 
   html-escaper@2.0.2: {}
 
-  http-proxy-agent@9.1.0:
+  http-proxy-agent@9.1.0(supports-color@8.1.1):
     dependencies:
       agent-base: 9.0.0
       debug: 4.4.3(supports-color@8.1.1)
@@ -3495,7 +3495,7 @@ snapshots:
       - kerberos
       - supports-color
 
-  https-proxy-agent@9.1.0:
+  https-proxy-agent@9.1.0(supports-color@8.1.1):
     dependencies:
       agent-base: 9.0.0
       debug: 4.4.3(supports-color@8.1.1)
@@ -3517,7 +3517,7 @@ snapshots:
       parent-module: 1.0.1
       resolve-from: 4.0.0
 
-  import-from-esm@2.0.0:
+  import-from-esm@2.0.0(supports-color@8.1.1):
     dependencies:
       debug: 4.4.3(supports-color@8.1.1)
       import-meta-resolve: 4.2.0
@@ -4005,7 +4005,7 @@ snapshots:
       find-up: 2.1.0
       load-json-file: 4.0.0
 
-  postcss@8.5.19:
+  postcss@8.5.20:
     dependencies:
       nanoid: 3.3.16
       picocolors: 1.1.1
@@ -4160,13 +4160,13 @@ snapshots:
 
   safe-buffer@5.1.2: {}
 
-  semantic-release@25.0.8:
+  semantic-release@25.0.8(supports-color@8.1.1):
     dependencies:
-      '@semantic-release/commit-analyzer': 13.0.1(semantic-release@25.0.8)
+      '@semantic-release/commit-analyzer': 13.0.1(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)
       '@semantic-release/error': 4.0.0
-      '@semantic-release/github': 12.0.9(semantic-release@25.0.8)
-      '@semantic-release/npm': 13.1.5(semantic-release@25.0.8)
-      '@semantic-release/release-notes-generator': 14.1.1(semantic-release@25.0.8)
+      '@semantic-release/github': 12.0.9(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)
+      '@semantic-release/npm': 13.1.5(semantic-release@25.0.8(supports-color@8.1.1))
+      '@semantic-release/release-notes-generator': 14.1.1(semantic-release@25.0.8(supports-color@8.1.1))(supports-color@8.1.1)
       aggregate-error: 5.0.0
       cosmiconfig: 9.0.2
       debug: 4.4.3(supports-color@8.1.1)
@@ -4178,7 +4178,7 @@ snapshots:
       git-log-parser: 1.2.1
       hook-std: 4.0.0
       hosted-git-info: 9.0.3
-      import-from-esm: 2.0.0
+      import-from-esm: 2.0.0(supports-color@8.1.1)
       lodash-es: 4.18.1
       marked: 15.0.12
       marked-terminal: 7.3.0(marked@15.0.12)
@@ -4455,7 +4455,7 @@ snapshots:
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.5
-      postcss: 8.5.19
+      postcss: 8.5.20
       rolldown: 1.1.5
       tinyglobby: 0.2.17
     optionalDependencies:
