@@ -59,7 +59,7 @@
     "rollup": "^4.62.2",
     "rollup-plugin-bundle-size": "^1.0.3",
     "semantic-release": "^25.0.8",
-    "@team-internet/semantic-release-plugins": "^1.5.0",
+    "@team-internet/semantic-release-plugins": "^2.0.0",
     "terser": "^5.49.0",
     "vite": "^8.1.5"
   },
