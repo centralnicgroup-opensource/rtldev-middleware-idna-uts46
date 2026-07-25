@@ -51,7 +51,7 @@
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",
     "c8": "^11.0.0",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "globals": "^17.7.0",
     "lint-staged": "^17.2.0",
     "mocha": "^11.7.6",
