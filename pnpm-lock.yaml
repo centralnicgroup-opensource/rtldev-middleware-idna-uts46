@@ -41,8 +41,8 @@ importers:
         specifier: ^11.0.1
         version: 11.0.1(semantic-release@25.0.8)
       '@team-internet/semantic-release-plugins':
-        specifier: ^1.5.0
-        version: 1.5.0(prettier@3.9.6)(semantic-release@25.0.8)
+        specifier: ^2.2.2
+        version: 2.2.2(prettier@3.9.6)(semantic-release@25.0.8)
       c8:
         specifier: ^11.0.0
         version: 11.0.0
@@ -599,8 +599,8 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
-  '@team-internet/semantic-release-plugins@1.5.0':
-    resolution: {integrity: sha512-2d0HscXjtZ1ZchKWvvQu42+DuxuIPWnBdRmv3oxFKLXgprTQMHnrt77dwTNe9ae9iK1Pg6gHD3dTFfwzTOn5Tg==}
+  '@team-internet/semantic-release-plugins@2.2.2':
+    resolution: {integrity: sha512-FixdcdFew2X3+mYnZiSVd0uu9GU2nBzCEtghExTqbD6L2bo14CdT+zzeP+MyjNWUsBge1p9tMn3AquRsz8Dhtg==}
     engines: {node: ^22.14.0 || >=24.10.0}
     peerDependencies:
       prettier: '>=3'
@@ -3000,7 +3000,7 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  '@team-internet/semantic-release-plugins@1.5.0(prettier@3.9.6)(semantic-release@25.0.8)':
+  '@team-internet/semantic-release-plugins@2.2.2(prettier@3.9.6)(semantic-release@25.0.8)':
     dependencies:
       '@semantic-release/error': 4.0.0
       archiver: 8.0.0
