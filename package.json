@@ -58,9 +58,9 @@
     "prettier": "^3.9.6",
     "rollup": "^4.62.4",
     "rollup-plugin-bundle-size": "^1.0.3",
-    "semantic-release": "^25.0.8",
-    "@team-internet/semantic-release-plugins": "^2.2.2",
-    "terser": "^5.49.1",
+    "semantic-release": "^25.0.9",
+    "@team-internet/semantic-release-plugins": "^2.2.4",
+    "terser": "^5.49.2",
     "vite": "^8.2.0"
   },
   "lint-staged": {
