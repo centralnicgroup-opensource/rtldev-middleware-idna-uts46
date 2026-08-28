@@ -20,7 +20,7 @@
     "packageManager": {
       "name": "pnpm",
       "version": "^11.0.0",
-      "onFail": "error"
+      "onFail": "warn"
     }
   },
   "homepage": "https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46",
