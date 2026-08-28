@@ -10,3 +10,8 @@ jobs:
   tests:
     uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-test.yml@main
     secrets: inherit
+    with:
+      # Empty, so pnpm/action-setup resolves the version from
+      # `devEngines.packageManager` in package.json rather than installing whatever
+      # pnpm is newest. (RSRMID-3008)
+      pnpm-version: ""
