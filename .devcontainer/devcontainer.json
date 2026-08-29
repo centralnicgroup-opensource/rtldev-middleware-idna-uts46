@@ -1,0 +1,70 @@
+{
+  // Everything shared with the other RTLDEV middleware repositories lives in the
+  // devbase Feature, not here: zsh with the team prompt, commitizen, pnpm at the
+  // version package.json declares, Node LTS, the GitHub CLI, the Claude Code CLI,
+  // the gh credential helper, persistent shell history, dependency installation,
+  // the shared VS Code extension set and the on-attach toolchain banner.
+  //
+  // This repository is written in the language devbase already brings, so what is left here is only what a Feature cannot set: the name, the workspace paths, the remote user, initializeCommand and the host mounts.
+  //
+  // Feature options and troubleshooting:
+  // https://github.com/centralnicgroup-opensource/rtldev-middleware-devcontainer-features
+  "name": "dstack-idna-uts46",
+  "build": {
+    "context": ".",
+    "dockerfile": "Dockerfile"
+  },
+
+  // localWorkspaceFolderBasename is the repository directory name, so these two
+  // need no editing per repository and cannot drift out of sync with it.
+  "workspaceMount": "source=${localWorkspaceFolder},target=/usr/share/${localWorkspaceFolderBasename},type=bind,consistency=cached",
+  "workspaceFolder": "/usr/share/${localWorkspaceFolderBasename}",
+  "shutdownAction": "stopContainer",
+
+  // Host-side preflight for the binds at the bottom of this file: Docker creates
+  // a missing bind source itself, as a root-owned *directory*. For ~/.ssh and
+  // ~/.claude that yields a directory nobody in the container can write to; for
+  // ~/.gitconfig it yields a directory where git expects a file, on the host too.
+  // Runs on the host, so it cannot move into a Feature.
+  "initializeCommand": {
+    "claude-state": "mkdir -p ${localEnv:HOME}/.claude",
+    "ssh-dir": "mkdir -p ${localEnv:HOME}/.ssh",
+    "gitconfig": "touch ${localEnv:HOME}/.gitconfig"
+  },
+
+  "features": {
+    // Node LTS, the GitHub CLI and the Claude Code CLI are devbase's own
+    // dependencies, so none of the three is listed here. Do NOT re-declare
+    // node:2 to change its version: one Feature id with two option sets counts
+    // as two Features under the spec's equality rule, so Node would install
+    // twice into the same nvm path. A repository that genuinely needs another
+    // major raises it against devbase.
+    "ghcr.io/centralnicgroup-opensource/rtldev-middleware-devcontainer-features/devbase:1": {}
+  },
+
+  // No "customizations" block on purpose: devbase contributes the whole shared
+  // VS Code layer — GitHub Actions, GitHub PRs, Remote Containers, Containers,
+  // both Claude extensions, shellcheck / shell-format / vscode-yaml with their
+  // settings, and the zsh terminal profile. Add one back only for an extension
+  // specific to this repository.
+
+  "remoteUser": "vscode",
+
+  // .ssh and .gitconfig make git work as it does on the host; /WSL_USER is what
+  // devbase's history persistence reads; .claude carries the Claude Code session
+  // state. Kept here because a Feature cannot mount.
+  //
+  // ${localEnv:HOME}${localEnv:USERPROFILE} resolves to whichever of the two the
+  // host defines. On a host defining *both* it resolves to neither and Docker
+  // mounts an empty directory; devbase reports that on post-create rather than
+  // silently losing history.
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly",
+    "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE},target=/WSL_USER,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
+  ]
+
+  // No postCreateCommand: devbase installs pnpm, the global packages and this
+  // repository's dependencies, and seeds .env from .env.example.
+}
