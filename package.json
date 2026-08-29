@@ -64,10 +64,10 @@
     "lint-staged": "^17.4.1",
     "mocha": "^11.8.0",
     "prettier": "^3.9.6",
-    "rollup": "^4.63.0",
+    "rollup": "^4.63.1",
     "rollup-plugin-bundle-size": "^1.0.3",
     "semantic-release": "^25.0.9",
-    "@team-internet/semantic-release-plugins": "^2.2.4",
+    "@team-internet/semantic-release-plugins": "^2.3.1",
     "terser": "^5.51.2",
     "vite": "^8.2.2"
   },
