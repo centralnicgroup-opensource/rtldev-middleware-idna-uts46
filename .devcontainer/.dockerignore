@@ -1,0 +1,6 @@
+# The devcontainer metadata is read by the CLI, not by the image build, so
+# keeping it out of the build context avoids a needless cache invalidation on
+# every edit to devcontainer.json.
+devcontainer.json
+devcontainer-lock.json
+env-info.conf
