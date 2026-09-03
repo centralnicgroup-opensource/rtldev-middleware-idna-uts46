@@ -1,3 +1,10 @@
+# [6.2.0](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.7...v6.2.0) (2026-09-03)
+
+
+### Features
+
+* **cli:** add a command line interface ([8a59dc2](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/8a59dc2f6840d7d6b85c961ac9a6507e2a5d2d38))
+
 ## [6.1.7](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.6...v6.1.7) (2026-04-02)
 
 
