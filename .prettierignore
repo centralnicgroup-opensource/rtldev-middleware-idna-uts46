@@ -1,5 +1,19 @@
-coverage
-.nyc_output
-dist
-.github
+node_modules/
+.pnpm-store/
+coverage/
+.nyc_output/
+dist/
+pnpm-lock.yaml
+
+# Copied into test/ by the `preserve` script out of dist/ and node_modules/. Generated,
+# gitignored, and not ours to format.
+test/index.mjs
+test/index.bundle.js
+test/mocha.css
+
+# Generated and owned by semantic-release (@semantic-release/changelog), which commits
+# it through @semantic-release/git and therefore never passes it through lint-staged. So
+# the copy in git is unformatted, and any human commit touching the file would make
+# lint-staged reflow the whole changelog — hundreds of lines of churn to edit two. Left
+# alone instead.
 HISTORY.md
