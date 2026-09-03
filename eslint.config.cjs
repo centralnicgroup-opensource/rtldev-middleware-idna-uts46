@@ -14,7 +14,7 @@ module.exports = [
   {
     ...recommended,
     languageOptions: {
-      ecmaVersion: 2019,
+      ecmaVersion: 2022,
       sourceType: 'module',
       globals: {
         ...globals.es6,

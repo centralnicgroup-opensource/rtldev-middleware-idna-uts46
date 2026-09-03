@@ -21,6 +21,71 @@ the full mapping for these strings, as defined by
 - [Documentation](https://support.centralnicreseller.com/hc/en-gb/articles/13509920188061-JavaScript-based-IDN-Converter)
 - [Release Notes](https://github.com/hexonet/idna-uts46/releases)
 
+## Command Line Interface
+
+The package ships the `idna-uts46-hx` executable. Use it without installing:
+
+```bash
+npx idna-uts46-hx öbb.at
+# öbb.at	xn--bb-eka.at
+```
+
+By default every input domain name is printed as `<unicode>` and `<punycode>`,
+separated by a tab. Restrict the output to one of both representations with
+`--to`:
+
+```bash
+idna-uts46-hx --to ascii faß.de
+# xn--fa-hia.de
+
+idna-uts46-hx --to unicode xn----5da7e.de
+# ä-ü.de
+```
+
+Domain names can be passed as arguments or piped in via stdin, one per line,
+which makes bulk conversion straightforward:
+
+```bash
+cat domains.txt | idna-uts46-hx --to ascii > punycode.txt
+```
+
+Use `--json` for machine-readable output, including per-domain error messages:
+
+```bash
+idna-uts46-hx --json öbb.at
+# [
+#   {
+#     "input": "öbb.at",
+#     "IDN": "öbb.at",
+#     "PC": "xn--bb-eka.at"
+#   }
+# ]
+```
+
+### Options
+
+| **Option**            | **Description**                                 |
+| --------------------- | ----------------------------------------------- |
+| `-t`, `--to <mode>`   | `ascii`, `unicode` or `both` (default: `both`)  |
+| `-j`, `--json`        | emit JSON instead of plain text                 |
+| `-s`, `--separator`   | column separator for mode `both` (default: tab) |
+| `--transitional`      | force `transitionalProcessing` on               |
+| `--no-transitional`   | force `transitionalProcessing` off              |
+| `--std3`              | apply `useSTD3ASCIIRules`                       |
+| `--verify-dns-length` | apply `verifyDNSLength`                         |
+| `--check-hyphens`     | apply `checkHyphens`                            |
+| `--check-bidi`        | apply `checkBidi`                               |
+| `--check-joiners`     | apply `checkJoiners`                            |
+| `-h`, `--help`        | show the help                                   |
+| `-v`, `--version`     | show the version                                |
+
+Without `--transitional` / `--no-transitional`, transitional processing is
+auto-detected from the TLD, just like in the library API.
+
+The exit code is `0` when all conversions succeeded, `1` when at least one
+domain name could not be converted (the reason is written to stderr, the
+remaining domain names are still processed) and `2` on invalid usage.
+
 ## v6 Notes & Migration Guide
 
 With v6 we migrated our library to npm package `tr46` as software dependency. By that step we use a library that is actively maintained in direction of correctly supporting the `TR46` standard and supporting the latest Version of the Unicode Standard. Reinventing the wheel isn't useful and something we have time or resources for. We were able to dramatically decrease the number of lines of code on our end.
