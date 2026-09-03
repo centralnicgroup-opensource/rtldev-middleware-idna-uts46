@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Skip hooks in CI — semantic-release's own commits would otherwise trigger
+# lint-staged, which reformats files it has no business touching mid-release.
+[ "$CI" = "true" ] && exit 0
+pnpm exec lint-staged

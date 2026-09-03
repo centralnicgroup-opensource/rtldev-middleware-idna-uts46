@@ -48,7 +48,7 @@
     "preserve": "pnpm run prepare; cp node_modules/mocha/mocha.css dist/index.bundle.js dist/index.mjs test",
     "serve": "vite",
     "lint": "eslint .",
-    "prepare": "pnpm run build && pnpm exec lint-staged"
+    "prepare": "husky && pnpm run build"
   },
   "dependencies": {
     "tr46": "^6.0.0"
@@ -65,6 +65,7 @@
     "c8": "^12.0.0",
     "eslint": "^10.9.1",
     "globals": "^17.12.0",
+    "husky": "^9.1.7",
     "lint-staged": "^17.4.1",
     "mocha": "^11.8.0",
     "prettier": "^3.9.6",
@@ -76,7 +77,9 @@
     "vite": "^8.2.2"
   },
   "lint-staged": {
-    "*": "prettier -u --write"
+    "**/*": [
+      "prettier --write --ignore-unknown"
+    ]
   },
   "prettier": {
     "trailingComma": "all",
