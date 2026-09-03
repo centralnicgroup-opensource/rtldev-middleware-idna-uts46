@@ -7,7 +7,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Pull Request Process
 
-Read [here](https://github.com/hexonet/idna-uts46/wiki/Development-Guide#pull-request-pr-procedure).
+Read [here](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/wiki/Development-Guide#pull-request-pr-procedure).
 
 ## Code of Conduct
 
