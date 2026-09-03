@@ -2,7 +2,6 @@
 lockfileVersion: '9.0'
 
 importers:
-
   .:
     configDependencies: {}
     packageManagerDependencies:
@@ -14,115 +13,170 @@ importers:
         version: 11.25.0
 
 packages:
-
   '@pnpm/exe@11.25.0':
-    resolution: {integrity: sha512-X19R2uC+VAJ4UJQE9c/PCdOXbDaWnZtad7WUrTHBFQuMVaK9MAHbyO/WgahQCuRtTmJkLbxcWKKCk+JeTYFm/g==}
+    resolution:
+      {
+        integrity: sha512-X19R2uC+VAJ4UJQE9c/PCdOXbDaWnZtad7WUrTHBFQuMVaK9MAHbyO/WgahQCuRtTmJkLbxcWKKCk+JeTYFm/g==,
+      }
     hasBin: true
 
   '@pnpm/linux-arm64@11.25.0':
-    resolution: {integrity: sha512-ra8akqhzsbcOhKSJ9fFV8H+Oc9uGQAcp/XmIBEdT+8hPPoZCit3+RNCHmg8bLoNvpSLtRvZE0WFCMj7WyzxeBA==}
+    resolution:
+      {
+        integrity: sha512-ra8akqhzsbcOhKSJ9fFV8H+Oc9uGQAcp/XmIBEdT+8hPPoZCit3+RNCHmg8bLoNvpSLtRvZE0WFCMj7WyzxeBA==,
+      }
     cpu: [arm64]
     os: [linux]
 
   '@pnpm/linux-x64@11.25.0':
-    resolution: {integrity: sha512-pQl/L10diKQCbF73viRrtVU8qVWMTudUCSG1uZ+EWBNKtU9Sbxe6Q378diXDb1uTwSgUVMQoypxlC1MTzh7qvQ==}
+    resolution:
+      {
+        integrity: sha512-pQl/L10diKQCbF73viRrtVU8qVWMTudUCSG1uZ+EWBNKtU9Sbxe6Q378diXDb1uTwSgUVMQoypxlC1MTzh7qvQ==,
+      }
     cpu: [x64]
     os: [linux]
 
   '@pnpm/linuxstatic-arm64@11.25.0':
-    resolution: {integrity: sha512-cYcrbB/xN1N6/5VUlFuHblb1gNyJgZv1CF5Pk1T0sHJxQMY4DFJV3OqHVAgahxyUfSTaQcVLvH1H2JFvd/+sgw==}
+    resolution:
+      {
+        integrity: sha512-cYcrbB/xN1N6/5VUlFuHblb1gNyJgZv1CF5Pk1T0sHJxQMY4DFJV3OqHVAgahxyUfSTaQcVLvH1H2JFvd/+sgw==,
+      }
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
   '@pnpm/linuxstatic-x64@11.25.0':
-    resolution: {integrity: sha512-HXDtaeQod16DDMUUcVLIMxvEc1jKn7IYsNPwbwAPs/Je/d3umRPJi3Ejjdn6e9qpXN6Oon+yvSsJr7B9oDt6KA==}
+    resolution:
+      {
+        integrity: sha512-HXDtaeQod16DDMUUcVLIMxvEc1jKn7IYsNPwbwAPs/Je/d3umRPJi3Ejjdn6e9qpXN6Oon+yvSsJr7B9oDt6KA==,
+      }
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
   '@pnpm/macos-arm64@11.25.0':
-    resolution: {integrity: sha512-m/eAgEqKhiSexGxWPHNXNnSRI0hudymg6K7LbrU2EoDs9IgJ28OKEz9mGxMzhkYBweEquR4k5teMNes/aToy9w==}
+    resolution:
+      {
+        integrity: sha512-m/eAgEqKhiSexGxWPHNXNnSRI0hudymg6K7LbrU2EoDs9IgJ28OKEz9mGxMzhkYBweEquR4k5teMNes/aToy9w==,
+      }
     cpu: [arm64]
     os: [darwin]
 
   '@pnpm/win-arm64@11.25.0':
-    resolution: {integrity: sha512-oAeECbtZ+eJziaBmPUkwJM8Dx7KVQ5FO367AXTjD2HGfB5ob1Bcu5hoUF5RBTgDBiP9fRQ1u13uAEpqar/6NLA==}
+    resolution:
+      {
+        integrity: sha512-oAeECbtZ+eJziaBmPUkwJM8Dx7KVQ5FO367AXTjD2HGfB5ob1Bcu5hoUF5RBTgDBiP9fRQ1u13uAEpqar/6NLA==,
+      }
     cpu: [arm64]
     os: [win32]
 
   '@pnpm/win-x64@11.25.0':
-    resolution: {integrity: sha512-8/n+wCc0a8TRYTMFqti93Vh0cscdJ25xfMyYSDdXrLUh2ccxSFuS+SE7cNPjd/nOXoFAJvdW0kwfbyRPLa16/w==}
+    resolution:
+      {
+        integrity: sha512-8/n+wCc0a8TRYTMFqti93Vh0cscdJ25xfMyYSDdXrLUh2ccxSFuS+SE7cNPjd/nOXoFAJvdW0kwfbyRPLa16/w==,
+      }
     cpu: [x64]
     os: [win32]
 
   '@reflink/reflink-darwin-arm64@0.1.19':
-    resolution: {integrity: sha512-ruy44Lpepdk1FqDz38vExBY/PVUsjxZA+chd9wozjUH9JjuDT/HEaQYA6wYN9mf041l0yLVar6BCZuWABJvHSA==}
-    engines: {node: '>= 10'}
+    resolution:
+      {
+        integrity: sha512-ruy44Lpepdk1FqDz38vExBY/PVUsjxZA+chd9wozjUH9JjuDT/HEaQYA6wYN9mf041l0yLVar6BCZuWABJvHSA==,
+      }
+    engines: { node: '>= 10' }
     cpu: [arm64]
     os: [darwin]
 
   '@reflink/reflink-darwin-x64@0.1.19':
-    resolution: {integrity: sha512-By85MSWrMZa+c26TcnAy8SDk0sTUkYlNnwknSchkhHpGXOtjNDUOxJE9oByBnGbeuIE1PiQsxDG3Ud+IVV9yuA==}
-    engines: {node: '>= 10'}
+    resolution:
+      {
+        integrity: sha512-By85MSWrMZa+c26TcnAy8SDk0sTUkYlNnwknSchkhHpGXOtjNDUOxJE9oByBnGbeuIE1PiQsxDG3Ud+IVV9yuA==,
+      }
+    engines: { node: '>= 10' }
     cpu: [x64]
     os: [darwin]
 
   '@reflink/reflink-linux-arm64-gnu@0.1.19':
-    resolution: {integrity: sha512-7P+er8+rP9iNeN+bfmccM4hTAaLP6PQJPKWSA4iSk2bNvo6KU6RyPgYeHxXmzNKzPVRcypZQTpFgstHam6maVg==}
-    engines: {node: '>= 10'}
+    resolution:
+      {
+        integrity: sha512-7P+er8+rP9iNeN+bfmccM4hTAaLP6PQJPKWSA4iSk2bNvo6KU6RyPgYeHxXmzNKzPVRcypZQTpFgstHam6maVg==,
+      }
+    engines: { node: '>= 10' }
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
   '@reflink/reflink-linux-arm64-musl@0.1.19':
-    resolution: {integrity: sha512-37iO/Dp6m5DDaC2sf3zPtx/hl9FV3Xze4xoYidrxxS9bgP3S8ALroxRK6xBG/1TtfXKTvolvp+IjrUU6ujIGmA==}
-    engines: {node: '>= 10'}
+    resolution:
+      {
+        integrity: sha512-37iO/Dp6m5DDaC2sf3zPtx/hl9FV3Xze4xoYidrxxS9bgP3S8ALroxRK6xBG/1TtfXKTvolvp+IjrUU6ujIGmA==,
+      }
+    engines: { node: '>= 10' }
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
   '@reflink/reflink-linux-x64-gnu@0.1.19':
-    resolution: {integrity: sha512-jbI8jvuYCaA3MVUdu8vLoLAFqC+iNMpiSuLbxlAgg7x3K5bsS8nOpTRnkLF7vISJ+rVR8W+7ThXlXlUQ93ulkw==}
-    engines: {node: '>= 10'}
+    resolution:
+      {
+        integrity: sha512-jbI8jvuYCaA3MVUdu8vLoLAFqC+iNMpiSuLbxlAgg7x3K5bsS8nOpTRnkLF7vISJ+rVR8W+7ThXlXlUQ93ulkw==,
+      }
+    engines: { node: '>= 10' }
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
   '@reflink/reflink-linux-x64-musl@0.1.19':
-    resolution: {integrity: sha512-e9FBWDe+lv7QKAwtKOt6A2W/fyy/aEEfr0g6j/hWzvQcrzHCsz07BNQYlNOjTfeytrtLU7k449H1PI95jA4OjQ==}
-    engines: {node: '>= 10'}
+    resolution:
+      {
+        integrity: sha512-e9FBWDe+lv7QKAwtKOt6A2W/fyy/aEEfr0g6j/hWzvQcrzHCsz07BNQYlNOjTfeytrtLU7k449H1PI95jA4OjQ==,
+      }
+    engines: { node: '>= 10' }
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
   '@reflink/reflink-win32-arm64-msvc@0.1.19':
-    resolution: {integrity: sha512-09PxnVIQcd+UOn4WAW73WU6PXL7DwGS6wPlkMhMg2zlHHG65F3vHepOw06HFCq+N42qkaNAc8AKIabWvtk6cIQ==}
-    engines: {node: '>= 10'}
+    resolution:
+      {
+        integrity: sha512-09PxnVIQcd+UOn4WAW73WU6PXL7DwGS6wPlkMhMg2zlHHG65F3vHepOw06HFCq+N42qkaNAc8AKIabWvtk6cIQ==,
+      }
+    engines: { node: '>= 10' }
     cpu: [arm64]
     os: [win32]
 
   '@reflink/reflink-win32-x64-msvc@0.1.19':
-    resolution: {integrity: sha512-E//yT4ni2SyhwP8JRjVGWr3cbnhWDiPLgnQ66qqaanjjnMiu3O/2tjCPQXlcGc/DEYofpDc9fvhv6tALQsMV9w==}
-    engines: {node: '>= 10'}
+    resolution:
+      {
+        integrity: sha512-E//yT4ni2SyhwP8JRjVGWr3cbnhWDiPLgnQ66qqaanjjnMiu3O/2tjCPQXlcGc/DEYofpDc9fvhv6tALQsMV9w==,
+      }
+    engines: { node: '>= 10' }
     cpu: [x64]
     os: [win32]
 
   '@reflink/reflink@0.1.19':
-    resolution: {integrity: sha512-DmCG8GzysnCZ15bres3N5AHCmwBwYgp0As6xjhQ47rAUTUXxJiK+lLUxaGsX3hd/30qUpVElh05PbGuxRPgJwA==}
-    engines: {node: '>= 10'}
+    resolution:
+      {
+        integrity: sha512-DmCG8GzysnCZ15bres3N5AHCmwBwYgp0As6xjhQ47rAUTUXxJiK+lLUxaGsX3hd/30qUpVElh05PbGuxRPgJwA==,
+      }
+    engines: { node: '>= 10' }
 
   detect-libc@2.1.2:
-    resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
-    engines: {node: '>=8'}
+    resolution:
+      {
+        integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==,
+      }
+    engines: { node: '>=8' }
 
   pnpm@11.25.0:
-    resolution: {integrity: sha512-XN6SW08HX3Jetx+64YpC/+eEUkeJ8ZthxzHLhyHsKKruFg4BqNWvT+2ypCzb8wDv4j2zVrDUoXtNY+EfirfJVg==}
-    engines: {node: '>=22.13'}
+    resolution:
+      {
+        integrity: sha512-XN6SW08HX3Jetx+64YpC/+eEUkeJ8ZthxzHLhyHsKKruFg4BqNWvT+2ypCzb8wDv4j2zVrDUoXtNY+EfirfJVg==,
+      }
+    engines: { node: '>=22.13' }
     hasBin: true
 
 snapshots:
-
   '@pnpm/exe@11.25.0':
     dependencies:
       '@reflink/reflink': 0.1.19
@@ -251,6 +305,9 @@ importers:
       globals:
         specifier: ^17.12.0
         version: 17.12.0
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
       lint-staged:
         specifier: ^17.4.1
         version: 17.4.1
@@ -972,8 +1029,8 @@ packages:
       bare-buffer:
         optional: true
 
-  bare-path@3.1.2:
-    resolution: {integrity: sha512-ZyKbsuuqK6Ag0K8pX6V5Txq6XeJRvY+wXucnFGRjiyVYP9YWDpIQugk/b+enRYrEYBJaqLzghRQpXPMR7341Nw==}
+  bare-path@3.1.1:
+    resolution: {integrity: sha512-JprUlveX3QjApC1cTpsUOiscADftCGVWkzitbHsRqv84hzYwYHw2mbluddsq5TvI8mH/8Ov1f4BiMAdcB0oYnQ==}
 
   bare-stream@2.13.4:
     resolution: {integrity: sha512-PcrQ8lVLbiJscNm1Kez+Yp4Gy4AHGcN1lzwjvf5NybWen7VvEgUfyfnXYJ2zNqWnzOfCb1Abq6lH8ti0syQszA==}
@@ -989,8 +1046,8 @@ packages:
       bare-events:
         optional: true
 
-  bare-url@2.5.3:
-    resolution: {integrity: sha512-3absfEzoyFosWT8v83ZcJgbTJxv+S/sI7jBfeCMlUVatSaefRmwweqBhFpMllQv+HTxs/FbbToVOw1c05NORkQ==}
+  bare-url@2.5.2:
+    resolution: {integrity: sha512-L13PCJzKG8RGvx8V1/DdMi12ERhC3tprr7/8a94BxpmnRsFqxh5XZNdhtMxu5HPkRshYOOWRGY8lDP7ZhpG9Cg==}
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
@@ -1546,6 +1603,11 @@ packages:
   human-signals@8.0.1:
     resolution: {integrity: sha512-eKCa6bwnJhvxj14kZk5NCPc6Hb6BdsU9DZcOnmQKSnO1VKrfV0zCvtttPZUsBvjmNDn8rpcJfpwSYnHBjc95MQ==}
     engines: {node: '>=18.18.0'}
+
+  husky@9.1.7:
+    resolution: {integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
@@ -3330,15 +3392,15 @@ snapshots:
   bare-fs@4.8.1:
     dependencies:
       bare-events: 2.9.2
-      bare-path: 3.1.2
+      bare-path: 3.1.1
       bare-stream: 2.13.4(bare-events@2.9.2)
-      bare-url: 2.5.3
+      bare-url: 2.5.2
       fast-fifo: 1.3.2
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
 
-  bare-path@3.1.2: {}
+  bare-path@3.1.1: {}
 
   bare-stream@2.13.4(bare-events@2.9.2):
     dependencies:
@@ -3350,9 +3412,9 @@ snapshots:
     transitivePeerDependencies:
       - react-native-b4a
 
-  bare-url@2.5.3:
+  bare-url@2.5.2:
     dependencies:
-      bare-path: 3.1.2
+      bare-path: 3.1.1
 
   base64-js@1.5.1: {}
 
@@ -3922,6 +3984,8 @@ snapshots:
   human-signals@5.0.0: {}
 
   human-signals@8.0.1: {}
+
+  husky@9.1.7: {}
 
   ieee754@1.2.1: {}
 
