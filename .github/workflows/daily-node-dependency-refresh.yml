@@ -18,7 +18,7 @@ jobs:
     uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/daily-node-dependency-refresh.yml@main
     secrets: inherit
     with:
-      base-ref: master
+      base-ref: main
       # Empty, so pnpm/action-setup resolves the version from
       # `devEngines.packageManager` in package.json rather than installing whatever
       # pnpm is newest. (RSRMID-3008)

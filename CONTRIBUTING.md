@@ -36,7 +36,7 @@ scope**:
 
 Releases are fully automated with
 [semantic-release](https://github.com/semantic-release/semantic-release), which
-derives the next version number from the commits that land on `master`. The type
+derives the next version number from the commits that land on `main`. The type
 decides whether there is a release at all, and which one:
 
 | Type       | Use for                                         | Release   |
@@ -84,11 +84,11 @@ Do **not** add `Co-Authored-By:` trailers.
 
 ## Branches and pull requests
 
-Every change goes through a pull request, there are no direct pushes to `master`.
+Every change goes through a pull request, there are no direct pushes to `main`.
 
-- Branch from an up-to-date default branch: run `git checkout master` and
+- Branch from an up-to-date default branch: run `git checkout main` and
   `git pull --ff-only` before `git checkout -b`. Never branch from a stale local
-  `master` or from another feature branch.
+  `main` or from another feature branch.
 - Name branches after the Jira issue: `RSRMID-1234/short-description`.
 - Keep a pull request focused on one topic. Unrelated changes belong in their own
   pull request.
@@ -103,10 +103,12 @@ hand.
 
 ## Formatting
 
-Prettier owns everything it understands (Markdown, JSON, YAML). `lint-staged` runs
-it over what you staged as part of `pnpm run prepare`, which `pnpm test` triggers,
-so in practice formatting is fixed before it reaches CI. Eslint runs in CI via
-`pnpm run lint`.
+Prettier owns everything it understands (Markdown, JSON, YAML). The husky pre-commit
+hook runs `lint-staged` over what you staged, so in practice formatting is fixed
+before it reaches CI. `pnpm install` installs the hook, through the `prepare` script.
+The hook is skipped when `CI=true`, so semantic-release's own commits are left alone.
+
+Eslint runs in CI via `pnpm run lint`.
 
 ## Code of Conduct
 
