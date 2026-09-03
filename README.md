@@ -4,7 +4,7 @@
 [![node](https://img.shields.io/node/v/idna-uts46-hx.svg)](https://www.npmjs.com/package/idna-uts46-hx)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/hexonet/idna-uts46/blob/master/CONTRIBUTING.md)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/blob/master/CONTRIBUTING.md)
 
 This module is a IDNA UTS46 connector library for javascript. In addition to the default functionality of tr46, we offer converting domain names to unicode / punycode considering the respective registry provider's behavior.
 
@@ -19,7 +19,7 @@ the full mapping for these strings, as defined by
 ## Resources
 
 - [Documentation](https://support.centralnicreseller.com/hc/en-gb/articles/13509920188061-JavaScript-based-IDN-Converter)
-- [Release Notes](https://github.com/hexonet/idna-uts46/releases)
+- [Release Notes](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/releases)
 
 ## Command Line Interface
 
@@ -130,7 +130,7 @@ The `toUnicode` function did not allow for a options parameter in earlier versio
 - v5: Migration of the IDNA Mapping Table's Build Process from Python to NodeJS5 by [dawsbot](https://github.com/dawsbot)
 - v5: Performance Improvements for the Browser Bundle's Page Load by [dawsbot](https://github.com/dawsbot)
 
-See also the list of [contributors](https://github.com/hexonet/idna-uts46/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/graphs/contributors) who participated in this project.
 
 ## License
 
