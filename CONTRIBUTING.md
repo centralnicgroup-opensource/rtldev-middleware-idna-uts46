@@ -7,7 +7,79 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Pull Request Process
 
-Read [here](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/wiki/Development-Guide#pull-request-pr-procedure).
+Every change goes through a pull request, there are no direct pushes to `master`.
+
+1. Create a branch off `master`, named after what it does, e.g. `feat/cli` or `fix/transitional-detection`.
+2. Keep a pull request focused on one topic. Unrelated changes belong in their own pull request.
+3. Run the checks locally before you push:
+
+   ```bash
+   pnpm install
+   pnpm test    # mocha test suite
+   pnpm lint    # eslint
+   ```
+
+   Formatting is handled by prettier and runs automatically on the staged files via lint-staged.
+
+4. Write your commit messages in the format described below. The release is derived from them, so this is not cosmetic.
+5. Open the pull request against `master` and describe what changed, why, and how you verified it.
+6. Once a maintainer approves and merges, semantic-release publishes the new version to npm, tags it, updates `HISTORY.md` and creates the github release. Nothing is released by hand.
+
+## Commit Messages
+
+Releases are fully automated with [semantic-release](https://github.com/semantic-release/semantic-release), which derives the next version number from the commit messages that land on `master`. We follow the Angular convention:
+
+```
+<type>(<scope>): <short summary>
+
+<optional body>
+
+<optional footer>
+```
+
+- **type** — one of the types listed below, lowercase.
+- **scope** — optional, the part of the package you touched, e.g. `cli`, `deps`, `toAscii`.
+- **short summary** — imperative mood ("add", not "added" or "adds"), no capital first letter, no trailing period.
+
+### Types and their effect on the release
+
+| **Type**   | **Use for**                                          | **Release**           |
+| ---------- | ---------------------------------------------------- | --------------------- |
+| `feat`     | a new feature                                        | minor (1.2.3 → 1.3.0) |
+| `fix`      | a bug fix                                            | patch (1.2.3 → 1.2.4) |
+| `perf`     | a change that improves performance                   | patch                 |
+| `revert`   | reverting an earlier commit                          | patch                 |
+| `docs`     | documentation only                                   | none                  |
+| `refactor` | a change that neither fixes a bug nor adds a feature | none                  |
+| `test`     | adding or correcting tests                           | none                  |
+| `build`    | build system, bundling or dependencies               | none                  |
+| `ci`       | CI configuration and workflows                       | none                  |
+| `style`    | formatting only, no change in behavior               | none                  |
+| `chore`    | maintenance that fits nowhere else                   | none                  |
+
+A type that triggers no release still shows up in the repository history, it just does not produce a new version on its own.
+
+### Breaking changes
+
+Announce a breaking change with a `BREAKING CHANGE:` footer, which triggers a major release:
+
+```
+feat(toUnicode): rename the transitional option
+
+BREAKING CHANGE: option `transitional` is now called `transitionalProcessing`.
+```
+
+The shorthand `feat!:` does **not** work in this repository. The configured Angular preset does not understand the `!` marker, so such a commit is not recognized at all and triggers no release whatsoever, not even the minor one you would get without the `!`. Always use the footer.
+
+### Examples
+
+```
+feat(cli): add a command line interface
+fix(toAscii): keep the domain name unchanged when tr46 returns null
+perf(convert): skip the mapping of already converted labels
+docs: describe the pull request process
+chore(deps): refresh node dependencies
+```
 
 ## Code of Conduct
 
