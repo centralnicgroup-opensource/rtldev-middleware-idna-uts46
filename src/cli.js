@@ -2,7 +2,6 @@
 'use strict';
 
 import { readFileSync } from 'node:fs';
-import { pathToFileURL } from 'node:url';
 import { parseArgs } from 'node:util';
 import { toAscii, toUnicode } from './index.js';
 
@@ -205,10 +204,11 @@ async function main(argv, io) {
 }
 
 /* c8 ignore start */
-if (
-  process.argv[1] &&
-  import.meta.url === pathToFileURL(process.argv[1]).href
-) {
+// `import.meta.main` rather than comparing import.meta.url against process.argv[1]:
+// npm installs the bin as a symlink (node_modules/.bin/idna-uts46-hx -> src/cli.js),
+// so argv[1] is the link while import.meta.url is the resolved target. Those never
+// match, and the CLI exited silently in every installed tree.
+if (import.meta.main) {
   main(process.argv.slice(2), {
     stdin: process.stdin,
     stdout: process.stdout,

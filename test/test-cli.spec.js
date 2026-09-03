@@ -2,6 +2,9 @@
 
 import assert from 'assert';
 import { spawnSync } from 'node:child_process';
+import { mkdtempSync, rmSync, symlinkSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { Readable } from 'node:stream';
 import { fileURLToPath } from 'node:url';
 import { main } from '../src/cli.js';
@@ -157,5 +160,27 @@ suite('cli', function () {
     });
     assert.strict.equal(result.status, 0);
     assert.strict.equal(result.stdout, 'xn--bb-eka.at\n');
+  });
+
+  // npm installs the bin as a symlink in node_modules/.bin, so the path the CLI is
+  // invoked through is not the path the module resolves to. Detecting "am I the entry
+  // point?" by comparing process.argv[1] against import.meta.url therefore answered no
+  // in every installed tree, and the CLI exited silently. Invoke it through a symlink
+  // the way npm does.
+  test('runs when invoked through a symlink, as npm installs the bin', function () {
+    const dir = mkdtempSync(join(tmpdir(), 'idna-uts46-cli-'));
+    try {
+      const link = join(dir, 'idna-uts46-hx');
+      symlinkSync(CLI, link);
+      const result = spawnSync(
+        process.execPath,
+        [link, '-t', 'ascii', 'öbb.at'],
+        { encoding: 'utf8' },
+      );
+      assert.strict.equal(result.status, 0);
+      assert.strict.equal(result.stdout, 'xn--bb-eka.at\n');
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
   });
 });
