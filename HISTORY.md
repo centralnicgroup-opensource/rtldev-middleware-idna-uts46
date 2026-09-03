@@ -1,3 +1,10 @@
+## [6.2.1](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.2.0...v6.2.1) (2026-09-03)
+
+
+### Bug Fixes
+
+* **cli:** run when invoked through the npm bin symlink ([3fe7b4f](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/3fe7b4fa293841acb0c617fef93e85a2cd9a534b))
+
 # [6.2.0](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.1.7...v6.2.0) (2026-09-03)
 
 
