@@ -1,5 +1,5 @@
 name: Quality
-'on':
+"on":
   pull_request:
     types:
       - opened
@@ -81,7 +81,7 @@ jobs:
           echo "ShellCheck completed."
 
   ci-success:
-    name: 'Quality: completed'
+    name: "Quality: completed"
     needs: [prettier, actionlint, shellcheck]
     if: always()
     runs-on: ubuntu-latest

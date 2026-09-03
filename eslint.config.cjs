@@ -1,21 +1,21 @@
-const globals = require('globals');
-const recommended = require('@eslint/js').configs.recommended;
+const globals = require("globals");
+const recommended = require("@eslint/js").configs.recommended;
 
 module.exports = [
   {
     ignores: [
-      'coverage/**',
-      'dist/**',
-      'test/index.bundle.js',
-      'test/index.mjs',
-      'test/mocha.css',
+      "coverage/**",
+      "dist/**",
+      "test/index.bundle.js",
+      "test/index.mjs",
+      "test/mocha.css",
     ],
   },
   {
     ...recommended,
     languageOptions: {
       ecmaVersion: 2022,
-      sourceType: 'module',
+      sourceType: "module",
       globals: {
         ...globals.es6,
         ...globals.node,
@@ -23,7 +23,7 @@ module.exports = [
     },
   },
   {
-    files: ['test/*.js'],
+    files: ["test/*.js"],
     languageOptions: {
       globals: {
         ...globals.mocha,

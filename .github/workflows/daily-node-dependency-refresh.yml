@@ -2,7 +2,7 @@ name: Daily Node dependency refresh
 
 on:
   schedule:
-    - cron: '17 3 * * *'
+    - cron: "17 3 * * *"
   workflow_dispatch:
 
 permissions:
@@ -22,4 +22,4 @@ jobs:
       # Empty, so pnpm/action-setup resolves the version from
       # `devEngines.packageManager` in package.json rather than installing whatever
       # pnpm is newest. (RSRMID-3008)
-      pnpm-version: ''
+      pnpm-version: ""
