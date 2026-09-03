@@ -104,6 +104,11 @@ hand.
 
 ## Formatting
 
+There is no prettier config: the repository runs on prettier's defaults, so there is
+nothing to drift out of date. Bulk reformats are listed in `.git-blame-ignore-revs`;
+github skips them in blame automatically, and locally you opt in once with
+`git config blame.ignoreRevsFile .git-blame-ignore-revs`.
+
 Prettier owns everything it understands (Markdown, JSON, YAML). The husky pre-commit
 hook runs `lint-staged` over what you staged, so in practice formatting is fixed
 before it reaches CI. `pnpm install` installs the hook, through the `prepare` script.
