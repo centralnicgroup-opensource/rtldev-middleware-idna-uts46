@@ -5,81 +5,108 @@ email, or any other method with the owners of this repository before making a ch
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
-## Pull Request Process
+## Development
 
-Every change goes through a pull request, there are no direct pushes to `master`.
+The repository ships a devcontainer, so **Reopen in Container** is the supported
+setup — it brings the toolchain and the linters. Working outside it is possible but
+unsupported, and version skew against CI is on you.
 
-1. Create a branch off `master`, named after what it does, e.g. `feat/cli` or `fix/transitional-detection`.
-2. Keep a pull request focused on one topic. Unrelated changes belong in their own pull request.
-3. Run the checks locally before you push:
+Run the repository's lint and test scripts before opening a pull request. The shared
+CI workflows run the same ones, so a green local run is a green build:
 
-   ```bash
-   pnpm install
-   pnpm test    # mocha test suite
-   pnpm lint    # eslint
-   ```
-
-   Formatting is handled by prettier and runs automatically on the staged files via lint-staged.
-
-4. Write your commit messages in the format described below. The release is derived from them, so this is not cosmetic.
-5. Open the pull request against `master` and describe what changed, why, and how you verified it.
-6. Once a maintainer approves and merges, semantic-release publishes the new version to npm, tags it, updates `HISTORY.md` and creates the github release. Nothing is released by hand.
-
-## Commit Messages
-
-Releases are fully automated with [semantic-release](https://github.com/semantic-release/semantic-release), which derives the next version number from the commit messages that land on `master`. We follow the Angular convention:
-
-```
-<type>(<scope>): <short summary>
-
-<optional body>
-
-<optional footer>
+```bash
+pnpm install
+pnpm test    # mocha test suite
+pnpm lint    # eslint
 ```
 
-- **type** — one of the types listed below, lowercase.
-- **scope** — optional, the part of the package you touched, e.g. `cli`, `deps`, `toAscii`.
-- **short summary** — imperative mood ("add", not "added" or "adds"), no capital first letter, no trailing period.
+## Commit messages
 
-### Types and their effect on the release
+[Conventional Commits](https://www.conventionalcommits.org/) with a **mandatory
+scope**:
 
-| **Type**   | **Use for**                                          | **Release**           |
-| ---------- | ---------------------------------------------------- | --------------------- |
-| `feat`     | a new feature                                        | minor (1.2.3 → 1.3.0) |
-| `fix`      | a bug fix                                            | patch (1.2.3 → 1.2.4) |
-| `perf`     | a change that improves performance                   | patch                 |
-| `revert`   | reverting an earlier commit                          | patch                 |
-| `docs`     | documentation only                                   | none                  |
-| `refactor` | a change that neither fixes a bug nor adds a feature | none                  |
-| `test`     | adding or correcting tests                           | none                  |
-| `build`    | build system, bundling or dependencies               | none                  |
-| `ci`       | CI configuration and workflows                       | none                  |
-| `style`    | formatting only, no change in behavior               | none                  |
-| `chore`    | maintenance that fits nowhere else                   | none                  |
+```text
+<type>(<scope>): <summary>
+```
 
-A type that triggers no release still shows up in the repository history, it just does not produce a new version on its own.
+- **type** — one of the types in the table below, lowercase.
+- **scope** — the part of the package you touched, e.g. `cli`, `deps`, `toAscii`.
+- **summary** — imperative mood ("add", not "added" or "adds"), no capital first
+  letter, no trailing period.
+
+Releases are fully automated with
+[semantic-release](https://github.com/semantic-release/semantic-release), which
+derives the next version number from the commits that land on `master`. The type
+decides whether there is a release at all, and which one:
+
+| Type       | Use for                                         | Release   |
+| ---------- | ----------------------------------------------- | --------- |
+| `fix`      | a bug fix in the source                         | **patch** |
+| `feat`     | a feature in the source                         | **minor** |
+| `perf`     | a performance improvement in the source         | **patch** |
+| `revert`   | reverting an earlier commit                     | **patch** |
+| `ci`       | workflows, devcontainer                         | none      |
+| `build`    | build tooling and scripts                       | none      |
+| `docs`     | documentation only                              | none      |
+| `test`     | tests only                                      | none      |
+| `refactor` | internal restructuring with no behaviour change | none      |
+| `style`    | formatting only, no change in behaviour         | none      |
+| `chore`    | anything else                                   | none      |
+
+`fix`, `feat` and `perf` are reserved for changes to the source, because they
+trigger a release. Everything else takes a non-releasing type. A non-releasing
+commit still lands in the history, it just does not cut a version on its own.
 
 ### Breaking changes
 
-Announce a breaking change with a `BREAKING CHANGE:` footer, which triggers a major release:
+A breaking change adds a `BREAKING CHANGE: <summary>` line to the commit body, after
+a blank line. It triggers a major bump **regardless of the type** — a `docs` or
+`chore` commit carrying that footer releases a major just as a `feat` does — so it
+also needs a migration note for consumers in the same change.
 
-```
+```text
 feat(toUnicode): rename the transitional option
 
 BREAKING CHANGE: option `transitional` is now called `transitionalProcessing`.
 ```
 
-The shorthand `feat!:` does **not** work in this repository. The configured Angular preset does not understand the `!` marker, so such a commit is not recognized at all and triggers no release whatsoever, not even the minor one you would get without the `!`. Always use the footer.
+Two things that look like they should work but do not, because the configured
+Angular preset only recognises the literal `BREAKING CHANGE` keyword and does not
+set a breaking-header pattern:
 
-### Examples
+- **`feat(cli)!: …` releases nothing at all.** The `!` makes the header unparseable,
+  so the commit is dropped entirely — you lose even the minor bump you would have
+  got without it. Use the footer.
+- **`BREAKING-CHANGE:` and `BREAKING CHANGES:` are not recognised** either. Only
+  `BREAKING CHANGE` matches, in any capitalisation.
 
-```
-feat(cli): add a command line interface
-fix(toAscii): keep the domain name unchanged when tr46 returns null
-perf(convert): skip the mapping of already converted labels
-docs: describe the pull request process
-chore(deps): refresh node dependencies
-```
+Do **not** add `Co-Authored-By:` trailers.
+
+## Branches and pull requests
+
+Every change goes through a pull request, there are no direct pushes to `master`.
+
+- Branch from an up-to-date default branch: run `git checkout master` and
+  `git pull --ff-only` before `git checkout -b`. Never branch from a stale local
+  `master` or from another feature branch.
+- Name branches after the Jira issue: `RSRMID-1234/short-description`.
+- Keep a pull request focused on one topic. Unrelated changes belong in their own
+  pull request.
+- Include the Jira issue link in the PR description, and add the PR URL as a comment
+  on the Jira issue after opening it.
+- **Rebase-merge** (`gh pr merge --rebase`). Squash merges are disabled at the
+  repository level, because the release tooling reads the individual commits.
+
+Once a pull request is merged, semantic-release publishes the new version to npm,
+tags it, updates `HISTORY.md` and creates the github release. Nothing is released by
+hand.
+
+## Formatting
+
+Prettier owns everything it understands (Markdown, JSON, YAML). `lint-staged` runs
+it over what you staged as part of `pnpm run prepare`, which `pnpm test` triggers,
+so in practice formatting is fixed before it reaches CI. Eslint runs in CI via
+`pnpm run lint`.
 
 ## Code of Conduct
 
