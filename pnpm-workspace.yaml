@@ -5,8 +5,8 @@ allowBuilds:
   esbuild: true
 
 overrides:
-  diff@>=6.0.0 <8.0.3: '>=8.0.3'
-  serialize-javascript@<=7.0.2: '>=7.0.3'
+  diff@>=6.0.0 <8.0.3: ">=8.0.3"
+  serialize-javascript@<=7.0.2: ">=7.0.3"
 
 # Nothing here is installed until it is at least a day old. This is a supply-chain
 # control, not a tidiness rule: the npm attacks that actually hurt people publish a

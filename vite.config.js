@@ -1,11 +1,11 @@
 // vite.config.js
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
 
 export default defineConfig({
   server: {
-    root: 'test',
+    root: "test",
     port: 8080,
     strictPort: true,
-    open: '/test/index.html',
+    open: "/test/index.html",
   },
 });

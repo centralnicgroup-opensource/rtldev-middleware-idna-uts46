@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-'use strict';
+"use strict";
 
-import { readFileSync } from 'node:fs';
-import { parseArgs } from 'node:util';
-import { toAscii, toUnicode } from './index.js';
+import { readFileSync } from "node:fs";
+import { parseArgs } from "node:util";
+import { toAscii, toUnicode } from "./index.js";
 
 const pkg = JSON.parse(
-  readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
+  readFileSync(new URL("../package.json", import.meta.url), "utf8"),
 );
 
 const USAGE = `Usage: idna-uts46-hx [options] [domain ...]
@@ -40,58 +40,58 @@ Examples:
 `;
 
 const OPTIONS = {
-  to: { type: 'string', short: 't', default: 'both' },
-  json: { type: 'boolean', short: 'j', default: false },
-  separator: { type: 'string', short: 's', default: '\t' },
-  transitional: { type: 'boolean', default: false },
-  'no-transitional': { type: 'boolean', default: false },
-  std3: { type: 'boolean', default: false },
-  'verify-dns-length': { type: 'boolean', default: false },
-  'check-hyphens': { type: 'boolean', default: false },
-  'check-bidi': { type: 'boolean', default: false },
-  'check-joiners': { type: 'boolean', default: false },
-  help: { type: 'boolean', short: 'h', default: false },
-  version: { type: 'boolean', short: 'v', default: false },
+  to: { type: "string", short: "t", default: "both" },
+  json: { type: "boolean", short: "j", default: false },
+  separator: { type: "string", short: "s", default: "\t" },
+  transitional: { type: "boolean", default: false },
+  "no-transitional": { type: "boolean", default: false },
+  std3: { type: "boolean", default: false },
+  "verify-dns-length": { type: "boolean", default: false },
+  "check-hyphens": { type: "boolean", default: false },
+  "check-bidi": { type: "boolean", default: false },
+  "check-joiners": { type: "boolean", default: false },
+  help: { type: "boolean", short: "h", default: false },
+  version: { type: "boolean", short: "v", default: false },
 };
 
 class UsageError extends Error {}
 
 function toTr46Options(values) {
   const options = {};
-  if (values.transitional && values['no-transitional']) {
+  if (values.transitional && values["no-transitional"]) {
     throw new UsageError(
-      'Options --transitional and --no-transitional are mutually exclusive.',
+      "Options --transitional and --no-transitional are mutually exclusive.",
     );
   }
   if (values.transitional) {
     options.transitionalProcessing = true;
   }
-  if (values['no-transitional']) {
+  if (values["no-transitional"]) {
     options.transitionalProcessing = false;
   }
   if (values.std3) {
     options.useSTD3ASCIIRules = true;
   }
-  if (values['verify-dns-length']) {
+  if (values["verify-dns-length"]) {
     options.verifyDNSLength = true;
   }
-  if (values['check-hyphens']) {
+  if (values["check-hyphens"]) {
     options.checkHyphens = true;
   }
-  if (values['check-bidi']) {
+  if (values["check-bidi"]) {
     options.checkBidi = true;
   }
-  if (values['check-joiners']) {
+  if (values["check-joiners"]) {
     options.checkJoiners = true;
   }
   return options;
 }
 
 function convertOne(domainName, mode, options) {
-  if (mode === 'ascii') {
+  if (mode === "ascii") {
     return { input: domainName, PC: toAscii(domainName, options) };
   }
-  if (mode === 'unicode') {
+  if (mode === "unicode") {
     return { input: domainName, IDN: toUnicode(domainName, options) };
   }
   const idn = toUnicode(domainName, options);
@@ -99,10 +99,10 @@ function convertOne(domainName, mode, options) {
 }
 
 function formatText(result, mode, separator) {
-  if (mode === 'ascii') {
+  if (mode === "ascii") {
     return result.PC;
   }
-  if (mode === 'unicode') {
+  if (mode === "unicode") {
     return result.IDN;
   }
   return `${result.IDN}${separator}${result.PC}`;
@@ -110,13 +110,13 @@ function formatText(result, mode, separator) {
 
 function readStdin(stream) {
   return new Promise((resolve, reject) => {
-    let data = '';
-    stream.setEncoding('utf8');
-    stream.on('data', (chunk) => {
+    let data = "";
+    stream.setEncoding("utf8");
+    stream.on("data", (chunk) => {
       data += chunk;
     });
-    stream.on('end', () => resolve(data));
-    stream.on('error', reject);
+    stream.on("end", () => resolve(data));
+    stream.on("error", reject);
   });
 }
 
@@ -125,7 +125,7 @@ async function collectDomainNames(positionals, stdin) {
     return positionals;
   }
   if (stdin.isTTY) {
-    throw new UsageError('No domain names given.');
+    throw new UsageError("No domain names given.");
   }
   return (await readStdin(stdin))
     .split(/\r?\n/)
@@ -156,7 +156,7 @@ async function run(argv, io) {
   }
 
   const mode = values.to.toLowerCase();
-  if (!['ascii', 'unicode', 'both'].includes(mode)) {
+  if (!["ascii", "unicode", "both"].includes(mode)) {
     throw new UsageError(
       `Unknown mode "${values.to}", expected one of: ascii, unicode, both.`,
     );

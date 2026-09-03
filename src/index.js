@@ -1,4 +1,4 @@
-import tr46 from 'tr46';
+import tr46 from "tr46";
 
 function getDefaultOptions(domainName) {
   return {
