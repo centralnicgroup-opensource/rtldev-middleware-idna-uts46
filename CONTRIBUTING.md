@@ -16,8 +16,9 @@ CI workflows run the same ones, so a green local run is a green build:
 
 ```bash
 pnpm install
-pnpm test    # mocha test suite
-pnpm lint    # eslint
+pnpm test        # mocha test suite
+pnpm lint        # eslint
+pnpm prettier    # formatting check; pnpm prettier:fix rewrites
 ```
 
 ## Commit messages
@@ -107,6 +108,12 @@ Prettier owns everything it understands (Markdown, JSON, YAML). The husky pre-co
 hook runs `lint-staged` over what you staged, so in practice formatting is fixed
 before it reaches CI. `pnpm install` installs the hook, through the `prepare` script.
 The hook is skipped when `CI=true`, so semantic-release's own commits are left alone.
+
+It is gated, not advisory: the Quality workflow runs `pnpm prettier` on every pull
+request, so unformatted Markdown is a red build rather than a local nag everyone
+learns to ignore. Check with `pnpm prettier`, rewrite with `pnpm prettier:fix`. The
+same workflow runs actionlint over the workflow files and shellcheck over the tracked
+shell scripts.
 
 Eslint runs in CI via `pnpm run lint`.
 
