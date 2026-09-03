@@ -6,6 +6,9 @@
   "type": "module",
   "main": "dist/index.mjs",
   "typings": "dist/index.d.ts",
+  "bin": {
+    "idna-uts46-hx": "src/cli.js"
+  },
   "files": [
     "dist/",
     "src/"
@@ -32,7 +35,8 @@
     "idna",
     "domain",
     "convert",
-    "converter"
+    "converter",
+    "cli"
   ],
   "scripts": {
     "prettier": "prettier -u --write \"**/*\"",
