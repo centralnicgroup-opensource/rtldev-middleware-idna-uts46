@@ -3,7 +3,10 @@
 # Github honours this file automatically. Locally, opt in once with:
 #   git config blame.ignoreRevsFile .git-blame-ignore-revs
 #
-# Add a commit here only if it changes formatting and nothing else.
+# Add a commit here only if it changes formatting and nothing else, and record the
+# sha it has *after* it lands on main. This repository rebase-merges, so a pull
+# request's commits get new shas when they are merged, and a sha taken from the
+# branch beforehand names a commit that is not on main and silently matches nothing.
 
 # style(prettier): drop the prettier config in favour of defaults
-e537fe6779728620e39c52c30e5c9448c5f223cc
+8cab1ec0cf39a516bf9cea2239a42781097986e3
