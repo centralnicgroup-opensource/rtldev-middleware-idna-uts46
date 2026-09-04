@@ -6,15 +6,44 @@ name: PR
       - synchronize
       - reopened
 
+permissions:
+  contents: read
+
+# Single entry point for PRs, so one gate covers both check sets. Auto-merge used to fire
+# from inside the shared test workflow the moment lint and tests went green, with no view
+# of quality.yml — so a dependency PR could merge with prettier or actionlint red. It now
+# hangs off `needs: [quality, tests]`. (RSRMID-3047)
 jobs:
+  # Language-agnostic: formatting, workflow syntax, shell.
   quality:
     uses: ./.github/workflows/quality.yml
 
+  # Language-specific: eslint and mocha, shared across the group's Node repositories.
   tests:
+    # The shared workflow nests a dependabot job wanting write. A nested reusable workflow
+    # may not request more than its caller holds, and the graph is validated before any
+    # `if` runs — so this grant is needed even though `auto-merge: false` skips that job.
+    permissions:
+      contents: write
+      pull-requests: write
     uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-test.yml@main
     secrets: inherit
     with:
+      # Empty, so pnpm/action-setup takes the version from `devEngines.packageManager`
+      # rather than installing whatever pnpm is newest. (RSRMID-3008)
       pnpm-version: ""
+      # We run the merge below instead, downstream of quality too. (RSRMID-3047)
+      auto-merge: false
+
+  # Skips on ordinary PRs — the shared workflow limits it to dependabot and the trusted
+  # refresh PRs — so `completed` must not depend on it: skipped is not success.
+  automerge:
+    needs: [quality, tests]
+    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/auto-merge-dependabot-pr.yml@main
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
 
   completed:
     name: "PR: completed"
@@ -23,6 +52,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check results
+        # Single quotes because GitHub expressions have no double-quoted literal — the
+        # syntax error would invalidate the whole file. `tr` puts each result on its own
+        # line: against one line `grep -vw success` matches nothing, so "success failure"
+        # would read green, the one outcome this job exists to catch.
         run: |
           if echo '${{ join(needs.*.result, ' ') }}' | tr ' ' '\n' | grep -qvw success; then
             echo "One or more PR checks failed: ${{ join(needs.*.result, ' ') }}"
