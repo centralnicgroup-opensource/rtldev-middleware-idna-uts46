@@ -12,3 +12,23 @@ permissions:
 jobs:
   quality:
     uses: ./.github/workflows/quality.yml
+
+  tests:
+    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-test.yml@ci/RSRMID-3047-idna-uts46-auto-merge-input
+    secrets: inherit
+    with:
+      pnpm-version: ""
+      auto-merge: false
+
+  completed:
+    name: "PR: completed"
+    needs: [quality, tests]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check results
+        run: |
+          if echo '${{ join(needs.*.result, ' ') }}' | tr ' ' '\n' | grep -qvw success; then
+            echo "One or more PR checks failed: ${{ join(needs.*.result, ' ') }}"
+            exit 1
+          fi
