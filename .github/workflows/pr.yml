@@ -1,0 +1,74 @@
+name: PR
+"on":
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: read
+
+# The single entry point for pull requests, so that one check gates the merge rather than
+# a set of workflows that each pass independently and none of which knows about the
+# others. That mattered: auto-merge used to be enabled the moment lint and tests went
+# green, from inside the shared test workflow, which cannot see quality.yml — so a
+# dependency PR could merge with prettier, actionlint or shellcheck red. Now auto-merge
+# hangs off `needs: [quality, tests]` and cannot run before both have reported.
+# (RSRMID-3047)
+jobs:
+  # Language-agnostic checks: Markdown/JSON/YAML formatting, workflow syntax, shell.
+  # Local, because they are about this repository's own files rather than about Node.
+  quality:
+    uses: ./.github/workflows/quality.yml
+
+  # Language-specific analysers: eslint and mocha. Shared, because every Node repository
+  # in the group runs the same two.
+  tests:
+    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-test.yml@main
+    secrets: inherit
+    with:
+      # Empty, so pnpm/action-setup resolves the version from
+      # `devEngines.packageManager` in package.json rather than installing whatever
+      # pnpm is newest. (RSRMID-3008)
+      pnpm-version: ""
+      # The shared workflow would otherwise merge a passing dependency PR itself, which
+      # is precisely the race this file exists to close — it has no view of `quality`.
+      # We take the merge over and run it below instead. (RSRMID-3047)
+      auto-merge: false
+
+  # Skipped on ordinary pull requests: the shared workflow's own `if` limits it to
+  # dependabot and to the titled refresh PRs from the trusted accounts. `completed`
+  # therefore does not depend on this job — a skipped job is not a successful one, and
+  # gating on it would fail every human PR.
+  automerge:
+    needs: [quality, tests]
+    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/auto-merge-dependabot-pr.yml@main
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: write
+
+  completed:
+    name: "PR: completed"
+    needs: [quality, tests]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check results
+        # Two things here are load-bearing:
+        #
+        # Single quotes inside the expression, because GitHub expressions have no
+        # double-quoted string literal — `join(needs.*.result, " ")` is not a style slip
+        # but a syntax error, and it makes the whole file "Invalid workflow file", so the
+        # gate never runs at all rather than running and passing.
+        #
+        # `tr` splits the space-joined results onto one line each. Against a single line,
+        # `grep -vw success` selects nothing as long as the word appears anywhere, so
+        # "success failure success" would report green — the one outcome this job exists
+        # to catch.
+        run: |
+          if echo '${{ join(needs.*.result, ' ') }}' | tr ' ' '\n' | grep -qvw success; then
+            echo "One or more PR checks failed: ${{ join(needs.*.result, ' ') }}"
+            exit 1
+          fi

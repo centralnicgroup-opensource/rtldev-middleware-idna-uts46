@@ -1,10 +1,9 @@
 name: Quality
 "on":
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+  # No `pull_request:` — pr.yml is the single entry point there and calls this workflow,
+  # so triggering on the event as well would run every check twice per PR. `push` and
+  # `workflow_dispatch` stay, because neither goes through pr.yml. (RSRMID-3047)
+  workflow_call:
   push:
     branches:
       - main
@@ -15,8 +14,8 @@ permissions:
 
 # Language-agnostic on purpose — it checks the things every repository has regardless of
 # what it is written in: Markdown/JSON/YAML formatting, workflow syntax, and shell
-# scripts. The language-specific analysers live in test.yml, which delegates to the
-# shared workflow. A repository wants both.
+# scripts. The language-specific analysers live in the shared workflow that pr.yml calls
+# alongside this one. A repository wants both.
 jobs:
   prettier:
     name: Prettier
@@ -79,27 +78,3 @@ jobs:
           git ls-files -z '*.sh' .husky/pre-commit \
             | xargs -0 --no-run-if-empty shellcheck --severity=warning
           echo "ShellCheck completed."
-
-  ci-success:
-    name: "Quality: completed"
-    needs: [prettier, actionlint, shellcheck]
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check results
-        # Two things here are load-bearing:
-        #
-        # Single quotes inside the expression, because GitHub expressions have no
-        # double-quoted string literal — `join(needs.*.result, " ")` is not a style slip
-        # but a syntax error, and it makes the whole file "Invalid workflow file", so the
-        # gate never runs at all rather than running and passing.
-        #
-        # `tr` splits the space-joined results onto one line each. Against a single line,
-        # `grep -vw success` selects nothing as long as the word appears anywhere, so
-        # "success failure success" would report green — the one outcome this job exists
-        # to catch.
-        run: |
-          if echo '${{ join(needs.*.result, ' ') }}' | tr ' ' '\n' | grep -qvw success; then
-            echo "One or more quality jobs failed: ${{ join(needs.*.result, ' ') }}"
-            exit 1
-          fi
