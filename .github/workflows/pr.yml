@@ -6,8 +6,18 @@ name: PR
       - synchronize
       - reopened
 
-permissions:
-  contents: read
+# No workflow-level `permissions:` here, deliberately, and it is not an oversight.
+#
+# Capping the default at `contents: read` makes the whole run fail at startup with no
+# jobs and no annotation. The shared test workflow ends in a `dependabot` job declaring
+# `contents: write` and `pull-requests: write`; a nested reusable workflow may not request
+# more than its caller holds, and GitHub validates the entire job graph before it
+# evaluates a single `if`. So the cap is fatal even though `auto-merge: false` below means
+# that job never actually runs. The old test.yml never hit this because it set no
+# permissions either and the repository default is `write`.
+#
+# Least privilege still applies where it can be expressed: quality.yml declares its own
+# `contents: read`, and `automerge` names exactly the two scopes it needs. (RSRMID-3047)
 
 # The single entry point for pull requests, so that one check gates the merge rather than
 # a set of workflows that each pass independently and none of which knows about the
@@ -15,7 +25,6 @@ permissions:
 # green, from inside the shared test workflow, which cannot see quality.yml — so a
 # dependency PR could merge with prettier, actionlint or shellcheck red. Now auto-merge
 # hangs off `needs: [quality, tests]` and cannot run before both have reported.
-# (RSRMID-3047)
 jobs:
   # Language-agnostic checks: Markdown/JSON/YAML formatting, workflow syntax, shell.
   # Local, because they are about this repository's own files rather than about Node.
