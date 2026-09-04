@@ -14,11 +14,10 @@ jobs:
     uses: ./.github/workflows/quality.yml
 
   tests:
-    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-test.yml@ci/RSRMID-3047-idna-uts46-auto-merge-input
+    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-test.yml@main
     secrets: inherit
     with:
       pnpm-version: ""
-      auto-merge: false
 
   completed:
     name: "PR: completed"
