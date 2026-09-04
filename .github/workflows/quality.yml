@@ -1,8 +1,7 @@
 name: Quality
 "on":
-  # No `pull_request:` — pr.yml is the single entry point there and calls this workflow,
-  # so triggering on the event as well would run every check twice per PR. `push` and
-  # `workflow_dispatch` stay, because neither goes through pr.yml. (RSRMID-3047)
+  # No `pull_request:` — pr.yml is the entry point there and calls this workflow, so
+  # triggering on the event too would run every check twice. (RSRMID-3047)
   workflow_call:
   push:
     branches:
