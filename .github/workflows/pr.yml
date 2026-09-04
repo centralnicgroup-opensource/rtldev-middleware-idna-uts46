@@ -25,7 +25,7 @@ jobs:
   # Language-specific analysers: eslint and mocha. Shared, because every Node repository
   # in the group runs the same two.
   tests:
-    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-test.yml@main
+    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/idna-uts46-test.yml@ci/RSRMID-3047-idna-uts46-auto-merge-input
     secrets: inherit
     with:
       # Empty, so pnpm/action-setup resolves the version from
@@ -43,7 +43,7 @@ jobs:
   # gating on it would fail every human PR.
   automerge:
     needs: [quality, tests]
-    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/auto-merge-dependabot-pr.yml@main
+    uses: centralnicgroup-opensource/rtldev-middleware-shareable-workflows/.github/workflows/auto-merge-dependabot-pr.yml@ci/RSRMID-3047-idna-uts46-auto-merge-input
     secrets: inherit
     permissions:
       contents: write
