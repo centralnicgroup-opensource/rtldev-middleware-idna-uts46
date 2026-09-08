@@ -24,12 +24,14 @@
   // Host-side preflight for the binds at the bottom of this file: Docker creates
   // a missing bind source itself, as a root-owned *directory*. For ~/.ssh and
   // ~/.claude that yields a directory nobody in the container can write to; for
-  // ~/.gitconfig it yields a directory where git expects a file, on the host too.
+  // ~/.gitconfig and ~/.zsh_history it yields a directory where a file is expected,
+  // on the host too, where the damage outlives the container.
   // Runs on the host, so it cannot move into a Feature.
   "initializeCommand": {
     "claude-state": "mkdir -p ${localEnv:HOME}/.claude",
     "ssh-dir": "mkdir -p ${localEnv:HOME}/.ssh",
-    "gitconfig": "touch ${localEnv:HOME}/.gitconfig"
+    "gitconfig": "touch ${localEnv:HOME}/.gitconfig",
+    "zsh-history": "touch ${localEnv:HOME}/.zsh_history"
   },
 
   "features": {
@@ -50,18 +52,29 @@
 
   "remoteUser": "vscode",
 
-  // .ssh and .gitconfig make git work as it does on the host; /WSL_USER is what
-  // devbase's history persistence reads; .claude carries the Claude Code session
+  // .ssh and .gitconfig make git work as it does on the host, both readonly: the
+  // container reads that identity, it does not maintain it. devbase writes its
+  // credential and signing config with `git config --local`, never `--global`,
+  // exactly so the host's file stays untouched, so readonly costs nothing here.
+  // /WSL_USER/.zsh_history is the single file devbase's history persistence
+  // reads; .claude carries the Claude Code session
   // state. Kept here because a Feature cannot mount.
   //
-  // ${localEnv:HOME}${localEnv:USERPROFILE} resolves to whichever of the two the
-  // host defines. On a host defining *both* it resolves to neither and Docker
-  // mounts an empty directory; devbase reports that on post-create rather than
-  // silently losing history.
+  // The history entry binds that one file and never the host home. Mounting
+  // ${localEnv:HOME} at /WSL_USER to reach a single file inside it handed the
+  // container read-write reach over the host's SSH keys, credentials and every
+  // other repository on the machine — and in the workspace repository it made the
+  // readonly flag on the GitHub tokens decorative, since the same inodes were
+  // writable by that second path. (RSRMID-3052)
+  //
+  // Narrowing it also retired the ${localEnv:HOME}${localEnv:USERPROFILE}
+  // concatenation, which resolved to neither path on a host defining both and left
+  // Docker mounting an empty directory. A single-file bind needs the host file to
+  // exist first instead — see the touch in initializeCommand above.
   "mounts": [
     "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly",
-    "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
-    "source=${localEnv:HOME}${localEnv:USERPROFILE},target=/WSL_USER,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,readonly",
+    "source=${localEnv:HOME}/.zsh_history,target=/WSL_USER/.zsh_history,type=bind,consistency=cached",
     "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
   ]
 
