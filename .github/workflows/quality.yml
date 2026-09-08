@@ -29,7 +29,7 @@ jobs:
       # disagreeing declarations. (RSRMID-3008)
       #
       # It must come before setup-node, which needs pnpm on PATH to resolve `cache: pnpm`.
-      - uses: pnpm/action-setup@v6.0.10
+      - uses: pnpm/action-setup@v6.1.0
       - uses: actions/setup-node@v7
         with:
           node-version: lts/*
