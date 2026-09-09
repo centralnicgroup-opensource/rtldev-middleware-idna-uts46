@@ -1,7 +1,7 @@
 {
   // Everything shared with the other RTLDEV middleware repositories lives in the
   // devbase Feature, not here: zsh with the team prompt, commitizen, pnpm at the
-  // version package.json declares, Node LTS, the GitHub CLI, the Claude Code CLI,
+  // version package.json declares, Node LTS, the GitHub CLI,
   // the gh credential helper, persistent shell history, dependency installation,
   // the shared VS Code extension set and the on-attach toolchain banner.
   //
@@ -35,13 +35,14 @@
   },
 
   "features": {
-    // Node LTS, the GitHub CLI and the Claude Code CLI are devbase's own
-    // dependencies, so none of the three is listed here. Do NOT re-declare
+    // Node LTS and the GitHub CLI are devbase's own dependencies, so neither is
+    // listed here. The Claude Code CLI was a third until devbase 2.0.0 dropped
+    // it — the VS Code extension runs its own bundled runtime (RSRMID-3053). Do NOT re-declare
     // node:2 to change its version: one Feature id with two option sets counts
     // as two Features under the spec's equality rule, so Node would install
     // twice into the same nvm path. A repository that genuinely needs another
     // major raises it against devbase.
-    "ghcr.io/centralnicgroup-opensource/rtldev-middleware-devcontainer-features/devbase:1": {}
+    "ghcr.io/centralnicgroup-opensource/rtldev-middleware-devcontainer-features/devbase:2": {}
   },
 
   // No "customizations" block on purpose: devbase contributes the whole shared
