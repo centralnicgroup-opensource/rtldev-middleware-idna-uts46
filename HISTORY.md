@@ -1,3 +1,10 @@
+## [6.2.2](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.2.1...v6.2.2) (2026-09-17)
+
+
+### Bug Fixes
+
+* **build:** ship the type declarations again ([b45c74b](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/b45c74bb3376294333f123b3fd326a69052886bf))
+
 ## [6.2.1](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.2.0...v6.2.1) (2026-09-03)
 
 
