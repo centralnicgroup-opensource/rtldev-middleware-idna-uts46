@@ -5,6 +5,7 @@
   "private": false,
   "type": "module",
   "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
   "bin": {
     "idna-uts46-hx": "src/cli.js"
@@ -44,6 +45,8 @@
     "build": "rollup -c rollup-esm.config.mjs",
     "pretest": "pnpm run prepare",
     "test": "mocha",
+    "posttest": "pnpm run verify:pack",
+    "verify:pack": "node tools/verify-pack.mjs",
     "test:coverage": "c8 --reporter=html mocha",
     "posttest:coverage": "vite --config vite.config.coverage.js",
     "preserve": "pnpm run prepare; cp node_modules/mocha/mocha.css dist/index.bundle.js dist/index.mjs test",

@@ -21,6 +21,26 @@ pnpm lint        # eslint
 pnpm prettier    # formatting check; pnpm prettier:fix rewrites
 ```
 
+## Type declarations
+
+The implementation is JavaScript and the declarations are hand-written, in
+`src/index.d.ts`. Nothing generates them, so a change to the public surface is not
+finished until that file matches it — otherwise TypeScript consumers keep compiling
+against the old API.
+
+The build copies the file to `dist/index.d.ts`, where the `typings` field in
+`package.json` points. `pnpm run verify:pack` then fails if any file `package.json`
+advertises is missing from the tarball npm would publish; it runs after `pnpm test`
+and again during the release, before anything is published. Both exist because 6.2.0
+and 6.2.1 shipped without declarations while still advertising them, and no part of
+the build disagreed with any other. (RSRMID-3085)
+
+`dist/index.d.ts` is a build artifact and is deliberately not in the
+`@semantic-release/git` asset list, unlike the three bundles beside it. Adding it
+there would put a generated file back under version control inside a gitignored
+directory — which is the arrangement that failed: the declarations survived only for
+as long as nobody cleaned `dist/`, and the day someone did, no check disagreed.
+
 ## Commit messages
 
 [Conventional Commits](https://www.conventionalcommits.org/) with a **mandatory
