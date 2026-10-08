@@ -78,7 +78,7 @@
     "rollup-plugin-bundle-size": "^1.0.3",
     "semantic-release": "^25.0.9",
     "terser": "^5.51.2",
-    "vite": "^8.3.2"
+    "vite": "^8.3.3"
   },
   "lint-staged": {
     "**/*": [
