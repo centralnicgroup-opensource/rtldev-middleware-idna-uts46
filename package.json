@@ -55,7 +55,7 @@
     "prepare": "husky && pnpm run build"
   },
   "dependencies": {
-    "tr46": "^6.0.0"
+    "tr46": "^7.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
