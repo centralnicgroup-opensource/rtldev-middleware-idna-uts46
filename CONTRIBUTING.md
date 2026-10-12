@@ -110,7 +110,7 @@ Every change goes through a pull request, there are no direct pushes to `main`.
 - Branch from an up-to-date default branch: run `git checkout main` and
   `git pull --ff-only` before `git checkout -b`. Never branch from a stale local
   `main` or from another feature branch.
-- Name branches after the Jira issue: `RSRMID-1234/short-description`.
+- Name branches after the Jira issue: `RSRMID-1234-short-description`.
 - Keep a pull request focused on one topic. Unrelated changes belong in their own
   pull request.
 - Include the Jira issue link in the PR description, and add the PR URL as a comment
