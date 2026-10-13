@@ -2027,8 +2027,8 @@ packages:
     resolution: {integrity: sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==}
     engines: {node: '>=10'}
 
-  p-map@7.1.0:
-    resolution: {integrity: sha512-HaSJ9hNZOxTUSATfB48Qi7U2+GF1eECjI39nkeLmCWQrSOYr1z4NepR0rpWiZO77pYwUWU2cJ5NIgsmoFCsYDQ==}
+  p-map@7.1.1:
+    resolution: {integrity: sha512-6Lh3jQPLthYujSrlw6ccWXBGZTkoTCz27Hd92g79LH/kjAbgoEu0t442cCCNbegPSJsA0lwDX8z0bcKtkpA32g==}
     engines: {node: '>=18'}
 
   p-reduce@3.0.0:
@@ -4223,7 +4223,7 @@ snapshots:
 
   p-filter@4.1.0:
     dependencies:
-      p-map: 7.1.0
+      p-map: 7.1.1
 
   p-limit@1.3.0:
     dependencies:
@@ -4241,7 +4241,7 @@ snapshots:
     dependencies:
       p-limit: 3.1.0
 
-  p-map@7.1.0: {}
+  p-map@7.1.1: {}
 
   p-reduce@3.0.0: {}
 
