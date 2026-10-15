@@ -1,3 +1,10 @@
+## [6.2.3](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.2.2...v6.2.3) (2026-10-15)
+
+
+### Bug Fixes
+
+* **deps:** bump tr46 from 6.0.0 to 7.0.0 ([249bf7b](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/249bf7b1e83fd04e1d8065e999ddd85a07a45a49))
+
 ## [6.2.2](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.2.1...v6.2.2) (2026-09-17)
 
 
