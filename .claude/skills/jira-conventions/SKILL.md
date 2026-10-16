@@ -35,8 +35,11 @@ copies byte-identical under every repository's own prettier config.
 - **Transitions** (global, available from any status): To Do (`11`), In Progress (`21`),
   In Review (`41`), Q&A (`61`), Ready for Deployment (`51`), Done (`31`), Stand-by (`71`),
   Cancelled (`91`)
-- **Account IDs** (assignee, mentions): look them up with `lookupJiraAccountId` by name;
-  never write one into a repository file — most of these repositories are public
+- **Account IDs** (assignee, mentions): look them up with `lookupJiraAccountId` by name.
+  Never write one into a file of a **public** repository — most of these repositories are
+  public, and an account ID there is published. A **private** repository may list the IDs its
+  work keeps needing, e.g. the regular assignees in its `CLAUDE.md`; check the repository's
+  visibility before you write one
 
 ## Fields to Set on Every Issue
 
