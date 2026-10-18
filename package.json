@@ -68,7 +68,7 @@
     "@semantic-release/git": "^11.0.1",
     "@team-internet/semantic-release-plugins": "^2.5.2",
     "c8": "^12.0.0",
-    "eslint": "^10.12.0",
+    "eslint": "^10.13.0",
     "globals": "^17.13.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
