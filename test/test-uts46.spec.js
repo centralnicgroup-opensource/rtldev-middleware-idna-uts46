@@ -100,11 +100,34 @@ suite("toASCII", function () {
     // Default is to not verify it.
     assert.strict.equal(uts46.toAscii(""), "");
   });
-  test("Defaults to transitional", function () {
-    assert.strict.equal(
-      uts46.toAscii("faß.de", { transitionalProcessing: true }),
-      "fass.de",
-    );
+  test("Defaults to transitional outside the listed TLDs", function () {
+    assert.strict.equal(uts46.toAscii("faß.com"), "fass.com");
+    assert.strict.deepEqual(uts46.convert("faß.com"), {
+      IDN: "fass.com",
+      PC: "fass.com",
+    });
+  });
+  test("Defaults to non-transitional for every listed TLD", function () {
+    const tlds = [
+      "art",
+      "be",
+      "ca",
+      "de",
+      "swiss",
+      "fr",
+      "pm",
+      "re",
+      "tf",
+      "wf",
+      "yt",
+    ];
+    for (const tld of tlds) {
+      assert.strict.equal(uts46.toAscii(`faß.${tld}`), `xn--fa-hia.${tld}`);
+    }
+  });
+  test("Matches the TLD only at the end of the name", function () {
+    assert.strict.equal(uts46.toAscii("faß.de.com"), "fass.de.com");
+    assert.strict.equal(uts46.toAscii("faß.dealer"), "fass.dealer");
   });
   test("Non-BMP characters", function () {
     assert.strict.equal(uts46.toAscii("\ud83d\udca9"), "xn--ls8h");
