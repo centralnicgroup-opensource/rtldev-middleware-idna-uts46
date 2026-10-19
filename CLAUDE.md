@@ -81,6 +81,10 @@ pnpm test:coverage    # c8 HTML report; posttest:coverage then serves it with vi
   `origin/main` (it becomes the new branch's upstream) or from another feature
   branch.
 - **Branch naming:** prefix with the Jira issue ID — `RSRMID-1234-short-description`.
+  `.husky/pre-push` rejects any other name, a slug that is not lowercase
+  `[a-z0-9]` with `.`/`-` separators included, except on the default branch;
+  `SKIP_BRANCH_CHECK=1` overrides it for a deliberate exception. There is no
+  `RSRMID-0000` fallback — work without an issue gets one.
 - **Pull requests:** include the Jira issue link in the description; after opening, add the
   PR URL as a comment on the Jira issue.
 - **Merging:** rebase-merge (`gh pr merge --rebase`). Squash merges are disabled at the
