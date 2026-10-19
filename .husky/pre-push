@@ -1,0 +1,63 @@
+#!/usr/bin/env sh
+# Enforce the branch convention RSRMID-1234-short-description on every pushed
+# branch: the issue key is what links a branch and its pull request to Jira.
+# The default branch is exempt, as are tags and deletions. Bot branches
+# (Dependabot, the daily dependency refresh) are created on GitHub and never
+# pass through this hook. SKIP_BRANCH_CHECK=1 overrides it for a deliberate
+# exception.
+#
+# husky runs this with `sh -e`: every command that may fail needs `|| true`.
+[ "$CI" = "true" ] && exit 0
+[ "$SKIP_BRANCH_CHECK" = "1" ] && exit 0
+
+remote="$1"
+
+# Resolved per remote, never hardcoded: the older repositories are on master,
+# the newer on main.
+default=$(git symbolic-ref --quiet --short "refs/remotes/$remote/HEAD" 2>/dev/null || true)
+default=${default#"$remote"/}
+if [ -z "$default" ]; then
+    default=$(git ls-remote --symref "$remote" HEAD 2>/dev/null |
+        sed -n 's|^ref: refs/heads/\(.*\)[[:space:]]HEAD$|\1|p' || true)
+fi
+
+# The issue key has no leading zero, so RSRMID-0000 is rejected: work without
+# an issue gets one, or uses the override.
+check() {
+    [ "$1" = "$default" ] && return 0
+    printf '%s\n' "$1" | grep -Eq '^RSRMID-[1-9][0-9]*-[a-z0-9]+([.-][a-z0-9]+)*$' && return 0
+    {
+        echo "pre-push: branch name '$1' does not follow the convention."
+        echo "  expected: RSRMID-<issue number>-<lowercase-slug>, e.g. RSRMID-1234-short-description"
+        if [ -n "$2" ]; then
+            echo "  rename:   git branch -m '$2' RSRMID-<n>-<slug>"
+        else
+            echo "  push to a conforming name instead: git push <remote> <ref>:RSRMID-<n>-<slug>"
+        fi
+        echo "  override: SKIP_BRANCH_CHECK=1 git push ..."
+    } >&2
+    return 1
+}
+
+# git sends one line per ref to update. Empty stdin means nothing is being
+# pushed, so there is nothing to check.
+status=0
+while read -r local_ref local_sha remote_ref _; do
+    [ -z "$remote_ref" ] && continue
+    # A deletion's local sha is all zeros, whatever the hash length.
+    case "$local_sha" in
+        *[!0]*) ;;
+        *) continue ;;
+    esac
+    case "$remote_ref" in
+        refs/heads/*) ;;
+        *) continue ;;
+    esac
+    remote_name=${remote_ref#refs/heads/}
+    # Suggest a rename only when renaming the local branch fixes the next push.
+    hint=
+    [ "$local_ref" = "refs/heads/$remote_name" ] && hint=$remote_name
+    check "$remote_name" "$hint" || status=1
+done
+
+exit $status
