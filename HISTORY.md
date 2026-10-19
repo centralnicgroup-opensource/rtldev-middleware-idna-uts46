@@ -1,3 +1,10 @@
+## [6.2.4](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.2.3...v6.2.4) (2026-10-19)
+
+
+### Bug Fixes
+
+* **idna:** detect the non-transitional TLDs case-insensitively ([ce1357a](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/commit/ce1357a881a45fd9d156c42d3471f6d69883e075))
+
 ## [6.2.3](https://github.com/centralnicgroup-opensource/rtldev-middleware-idna-uts46/compare/v6.2.2...v6.2.3) (2026-10-15)
 
 
