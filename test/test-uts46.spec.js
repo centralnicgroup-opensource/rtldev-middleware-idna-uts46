@@ -42,6 +42,8 @@ suite("toASCII", function () {
       }),
       "xn--fa-hia.de",
     );
+    // The TLD is detected case-insensitively.
+    assert.strict.equal(uts46.toAscii("faß.DE"), "xn--fa-hia.de");
     // Default to not processing STD3 rules (that's what URL.domainToASCII
     // is specifying).
     assert.strict.equal(uts46.toAscii("not=std3"), "not=std3");
