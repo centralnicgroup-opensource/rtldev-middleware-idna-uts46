@@ -1314,8 +1314,8 @@ packages:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
 
-  execa@10.2.0:
-    resolution: {integrity: sha512-j1pFOVxaybMVCTNHSBuISL2KQcDS3KIE1wBmUp4n2X+1FgaQI2ZDJVy9TYxDyMCzYojRIMh9O8X/UoWZtxTJdw==}
+  execa@10.2.1:
+    resolution: {integrity: sha512-/Bofl3ZBh2Q4/PG0W63qFzP5vDAypi8Zc90UWTBzaDNIYiX7apPOd0N6L8hG8CojUdq4V51adu8BObP+iVsSTw==}
     engines: {node: '>=22'}
 
   execa@8.0.1:
@@ -2263,8 +2263,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  serialize-javascript@7.1.3:
-    resolution: {integrity: sha512-kYEnegpAxWFjUw3dSYdSM9zVlTrsxDbsSkq/qd3B7VanqyJ+JdDy6qVyuqVGBhSfuD/rLZQEKuXsO5KZFCrVYQ==}
+  serialize-javascript@7.1.4:
+    resolution: {integrity: sha512-FqlEuoTq/zRmA4Lg6aOqyH3lCHbUtCB0bmHCeFniX2GBdDqMJM3FwdvEhlE5Pim1dlt2FfBdVPmUNNiGhhKqpw==}
     engines: {node: '>=20.0.0'}
 
   shebang-command@2.0.0:
@@ -2954,7 +2954,7 @@ snapshots:
 
   '@rollup/plugin-terser@1.0.2(rollup@4.65.0)':
     dependencies:
-      serialize-javascript: 7.1.3
+      serialize-javascript: 7.1.4
       smob: 1.6.2
       terser: 5.51.2
     optionalDependencies:
@@ -3086,7 +3086,7 @@ snapshots:
       aggregate-error: 5.1.0
       debug: 4.4.3(supports-color@8.1.1)
       dir-glob: 3.0.1
-      execa: 10.2.0
+      execa: 10.2.1
       lodash-es: 4.18.1
       micromatch: 4.0.8
       p-reduce: 3.0.0
@@ -3161,7 +3161,7 @@ snapshots:
     dependencies:
       '@semantic-release/error': 4.0.0
       archiver: 8.0.0
-      execa: 10.2.0
+      execa: 10.2.1
       glob: 13.0.6
       micromatch: 4.0.8
       replace-in-file: 9.0.0
@@ -3630,7 +3630,7 @@ snapshots:
 
   events@3.3.0: {}
 
-  execa@10.2.0:
+  execa@10.2.1:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       figures: 6.1.0
@@ -4148,7 +4148,7 @@ snapshots:
       minimatch: 10.2.6
       ms: 2.1.3
       picocolors: 1.1.1
-      serialize-javascript: 7.1.3
+      serialize-javascript: 7.1.4
       strip-json-comments: 5.0.3
       supports-color: 8.1.1
       workerpool: 10.0.3
@@ -4531,7 +4531,7 @@ snapshots:
 
   semver@7.8.5: {}
 
-  serialize-javascript@7.1.3: {}
+  serialize-javascript@7.1.4: {}
 
   shebang-command@2.0.0:
     dependencies:
