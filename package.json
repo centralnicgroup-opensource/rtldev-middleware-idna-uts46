@@ -73,12 +73,12 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "mocha": "^12.0.3",
-    "prettier": "^3.9.10",
+    "prettier": "^3.10.0",
     "rollup": "^4.68.2",
     "rollup-plugin-bundle-size": "^1.0.3",
     "semantic-release": "^25.0.9",
     "terser": "^5.51.2",
-    "vite": "^8.3.7"
+    "vite": "^8.3.8"
   },
   "lint-staged": {
     "**/*": [
