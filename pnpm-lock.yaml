@@ -8,45 +8,45 @@ importers:
     packageManagerDependencies:
       '@pnpm/exe':
         specifier: ^11.0.0
-        version: 11.28.11
+        version: 11.28.12
       pnpm:
         specifier: ^11.0.0
-        version: 11.28.11
+        version: 11.28.12
 
 packages:
 
-  '@pnpm/exe@11.28.11':
-    resolution: {integrity: sha512-jmUeng/xwMPbWxhH8JFsJGVvcK66OEuVMlA37MDGd1vLX+WAn/lzYCZTsECMbn7fPyoJiHZ+Hb7WcN0v49nYew==}
+  '@pnpm/exe@11.28.12':
+    resolution: {integrity: sha512-NUeSBNXic+NATgSB8oJ6kqK6+k7hzRHHWT+G/RXjDdExIONtGN2DrscQNQB6+ggW0cFI97VN2vmjR84C8RDSDQ==}
     hasBin: true
 
-  '@pnpm/linux-arm64@11.28.11':
-    resolution: {integrity: sha512-XHErk90YCwHGmuR+5TS8lOx5pdFAfGta76IZX3pdoM9c9GE8M2ND0GlqM9GXXwdbwrTTgGOYitWCpvXruLc+DQ==}
+  '@pnpm/linux-arm64@11.28.12':
+    resolution: {integrity: sha512-KsXYoEGasccL5j3XIuqRPEHyNyaLzAPI1Xj3ltGTqtfN/L06amM6vswS+G6l/PHJG8ddIHUgWXRD3YCJf+Mhhw==}
     cpu: [arm64]
     os: [linux]
 
-  '@pnpm/linux-x64@11.28.11':
-    resolution: {integrity: sha512-dLGoSU2YzlgKszrCpLEdQdquk5+Q4a8Bj53Qgdv/zQsf0tdc0iRiShODml9XBOEHNz3y/edH1dQo45ZBcKto1Q==}
+  '@pnpm/linux-x64@11.28.12':
+    resolution: {integrity: sha512-maqnmYr2IY/KR2XMnYbR5vtXIX3tIxxRflqkg9oteEtn8ZDLaLxuqAlh53NG+GoFdBk1xFhi/vjIN6fP1fXunA==}
     cpu: [x64]
     os: [linux]
 
-  '@pnpm/linuxstatic-x64@11.28.11':
-    resolution: {integrity: sha512-n6TyhLAym3g6FcK7dBHEvTNhVw3n7jd0ltR+BSU/i6dWWp6Ajdnqx4SblFrshG5CV9iOfx9c1Iz6Td3lHmBjHQ==}
+  '@pnpm/linuxstatic-x64@11.28.12':
+    resolution: {integrity: sha512-ULYs8FegWvlRt+9YgVs8k4X8gHr2jBNYqAC05PZJ4Eubp2TeGxmxXI+YHhJU3gbQwuqJZ7CtSAfgxxv3OgIFqg==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@pnpm/macos-arm64@11.28.11':
-    resolution: {integrity: sha512-rrO6e7dYcPw8r6Ey0xjx09FMSblJ1KuC/igFJ1lqe3jEwCg7xNN2+EMxStpDAihjg3hKT0tW298qnsa3vhoTpQ==}
+  '@pnpm/macos-arm64@11.28.12':
+    resolution: {integrity: sha512-hLIMPmTzXVB98mvS5tIcv0opycxAExof7f75iogzSB+/awKHoSP6R1Cmd9mEJa999Q4t9qX0DwRr0gSc8ax3zw==}
     cpu: [arm64]
     os: [darwin]
 
-  '@pnpm/win-arm64@11.28.11':
-    resolution: {integrity: sha512-S22r7j87v9+P5MB3mO+BJaDJntPSK8pY5hRyLETYJwK5eSWgXIV7O6Mwtt+HNksuOFaTa1W8fuxVC30ObNSRLA==}
+  '@pnpm/win-arm64@11.28.12':
+    resolution: {integrity: sha512-T6ilN7ML2gns9jC3ROsgLBD+wp/gMoigIKfU/5Xa4wQNa9lH1Svf2TRmbhqn8W4fRV3f31JQ0rn2QpIn8wSJFg==}
     cpu: [arm64]
     os: [win32]
 
-  '@pnpm/win-x64@11.28.11':
-    resolution: {integrity: sha512-s/TIZearoJMvRBV/kbOU2Z9uhzvFsu+6wB1AqrFyTdV6hj7jwe/Zxe6lAfB7r1Xb7yB2V5VMlns+QHUQPIkBRg==}
+  '@pnpm/win-x64@11.28.12':
+    resolution: {integrity: sha512-LiNEPQCcbRu2vdhMy7UdtiP5OFFYa5wNPgXtWbbiY+FVXBJeykK7CuO56S9PK/JUezzxxZE5MIz3drGChEMmlw==}
     cpu: [x64]
     os: [win32]
 
@@ -110,41 +110,41 @@ packages:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
 
-  pnpm@11.28.11:
-    resolution: {integrity: sha512-dAGE0Q+B9dWxZb6IVg7numJAbEE0iWq8J6WAEJ7sL0fB5B2RJRyUTCyrq8scIkYXmeu3LeLsYlryAwsONsc1ow==}
+  pnpm@11.28.12:
+    resolution: {integrity: sha512-lIMzh+NdUD6K0QEEF83rgsEg5+abr98KnbBpBRW+rnFZJ0Vx5pK5arwqCF01Zv7FQ4Gv2Xj2X2SoU2Lf1+EI9w==}
     engines: {node: '>=22.13'}
     hasBin: true
 
 snapshots:
 
-  '@pnpm/exe@11.28.11':
+  '@pnpm/exe@11.28.12':
     dependencies:
       '@reflink/reflink': 0.1.19
       detect-libc: 2.1.2
     optionalDependencies:
-      '@pnpm/linux-arm64': 11.28.11
-      '@pnpm/linux-x64': 11.28.11
-      '@pnpm/linuxstatic-x64': 11.28.11
-      '@pnpm/macos-arm64': 11.28.11
-      '@pnpm/win-arm64': 11.28.11
-      '@pnpm/win-x64': 11.28.11
+      '@pnpm/linux-arm64': 11.28.12
+      '@pnpm/linux-x64': 11.28.12
+      '@pnpm/linuxstatic-x64': 11.28.12
+      '@pnpm/macos-arm64': 11.28.12
+      '@pnpm/win-arm64': 11.28.12
+      '@pnpm/win-x64': 11.28.12
 
-  '@pnpm/linux-arm64@11.28.11':
+  '@pnpm/linux-arm64@11.28.12':
     optional: true
 
-  '@pnpm/linux-x64@11.28.11':
+  '@pnpm/linux-x64@11.28.12':
     optional: true
 
-  '@pnpm/linuxstatic-x64@11.28.11':
+  '@pnpm/linuxstatic-x64@11.28.12':
     optional: true
 
-  '@pnpm/macos-arm64@11.28.11':
+  '@pnpm/macos-arm64@11.28.12':
     optional: true
 
-  '@pnpm/win-arm64@11.28.11':
+  '@pnpm/win-arm64@11.28.12':
     optional: true
 
-  '@pnpm/win-x64@11.28.11':
+  '@pnpm/win-x64@11.28.12':
     optional: true
 
   '@reflink/reflink-darwin-arm64@0.1.19':
@@ -184,7 +184,7 @@ snapshots:
 
   detect-libc@2.1.2: {}
 
-  pnpm@11.28.11: {}
+  pnpm@11.28.12: {}
 
 ---
 lockfileVersion: '9.0'
@@ -231,7 +231,7 @@ importers:
         version: 11.0.1(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@team-internet/semantic-release-plugins':
         specifier: ^2.5.2
-        version: 2.5.2(@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1))(bare-buffer@3.7.1)(conventional-changelog-angular@8.3.1)(prettier@3.10.0)(semantic-release@25.0.9(supports-color@8.1.1))
+        version: 2.5.2(@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1))(bare-buffer@3.7.1)(conventional-changelog-angular@8.3.1)(prettier@3.10.1)(semantic-release@25.0.9(supports-color@8.1.1))
       c8:
         specifier: ^12.0.0
         version: 12.0.0
@@ -251,8 +251,8 @@ importers:
         specifier: ^12.0.3
         version: 12.0.3
       prettier:
-        specifier: ^3.10.0
-        version: 3.10.0
+        specifier: ^3.10.1
+        version: 3.10.1
       rollup:
         specifier: ^4.68.2
         version: 4.68.2
@@ -801,8 +801,8 @@ packages:
     peerDependencies:
       semantic-release: '>=20.1.0'
 
-  '@semantic-release/github@12.0.10':
-    resolution: {integrity: sha512-QskygvpX8hFx9UEbqJ+C46OIhaJjsysNQ8PYJPuRDc/ek5+dh8WYGD1ofUahCcGLAOmnnwZTcmCJCEXM8XxhRw==}
+  '@semantic-release/github@12.0.11':
+    resolution: {integrity: sha512-/8JPlFOV8he+gs+kS8Gx0tNWBboCRBd1q3y7pQhYwtrBL0CzDe9yzguZZAfnjGM2duWYB3rEYn9BdYLu9x00cg==}
     engines: {node: ^22.14.0 || >= 24.10.0}
     peerDependencies:
       semantic-release: '>=24.1.0'
@@ -992,8 +992,8 @@ packages:
       bare-buffer:
         optional: true
 
-  bare-path@3.1.2:
-    resolution: {integrity: sha512-ZyKbsuuqK6Ag0K8pX6V5Txq6XeJRvY+wXucnFGRjiyVYP9YWDpIQugk/b+enRYrEYBJaqLzghRQpXPMR7341Nw==}
+  bare-path@3.1.3:
+    resolution: {integrity: sha512-8r+FVU/o4zcFmpCDqbqAYhHHbtXPP+cyZKo7DRGRWc7OLlNs4TMaSQEpXL/sIdzyEG0M7RHw4B7xYMGrTc+qrg==}
 
   bare-stream@2.13.4:
     resolution: {integrity: sha512-PcrQ8lVLbiJscNm1Kez+Yp4Gy4AHGcN1lzwjvf5NybWen7VvEgUfyfnXYJ2zNqWnzOfCb1Abq6lH8ti0syQszA==}
@@ -1472,8 +1472,8 @@ packages:
   graceful-fs@4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
 
-  graceful-fs@4.2.11:
-    resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+  graceful-fs@4.2.12:
+    resolution: {integrity: sha512-iuyGF2E4oafQfPsRrG2wtY2ILupMhvtdrhzrxB+0VcjsPpSPttpfYdjnGFGsTi5MaJFjI1jOKHPQ6UTbTj9TAw==}
 
   gzip-size@3.0.0:
     resolution: {integrity: sha512-6s8trQiK+OMzSaCSVXX+iqIcLV9tC+E73jrJrJTyS4h/AJhlxHvzFKqM1YLDJWRGgHX8uLkBeXkA0njNj39L4w==}
@@ -2155,8 +2155,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier@3.10.0:
-    resolution: {integrity: sha512-mBi4765LgjO1PFjlEs7pUeK0nb1bw71c+N4/ItfeUWNdY5cV2pRKaFpbbFRYmDJMO+5ZwzGxHRqHxFZna7iv5w==}
+  prettier@3.10.1:
+    resolution: {integrity: sha512-70vp3ZUYoPlFbF9uiTdXHUUCGEIp7d4+6p+8DYbkm2jP7x/3i/paXVF6dopSI3zd/CEitrZN1rc4i85xWmmXlg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3153,7 +3153,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@semantic-release/github@12.0.10(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1)':
+  '@semantic-release/github@12.0.11(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       '@octokit/core': 7.0.8
       '@octokit/plugin-paginate-rest': 15.0.0(@octokit/core@7.0.8)
@@ -3216,7 +3216,7 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  '@team-internet/semantic-release-plugins@2.5.2(@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1))(bare-buffer@3.7.1)(conventional-changelog-angular@8.3.1)(prettier@3.10.0)(semantic-release@25.0.9(supports-color@8.1.1))':
+  '@team-internet/semantic-release-plugins@2.5.2(@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1))(bare-buffer@3.7.1)(conventional-changelog-angular@8.3.1)(prettier@3.10.1)(semantic-release@25.0.9(supports-color@8.1.1))':
     dependencies:
       '@semantic-release/error': 4.0.0
       archiver: 8.0.0(bare-buffer@3.7.1)
@@ -3227,7 +3227,7 @@ snapshots:
     optionalDependencies:
       '@semantic-release/release-notes-generator': 14.1.1(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1)
       conventional-changelog-angular: 8.3.1
-      prettier: 3.10.0
+      prettier: 3.10.1
       semantic-release: 25.0.9(supports-color@8.1.1)
     transitivePeerDependencies:
       - bare-abort-controller
@@ -3341,7 +3341,7 @@ snapshots:
   bare-fs@4.8.4(bare-buffer@3.7.1):
     dependencies:
       bare-events: 2.9.2
-      bare-path: 3.1.2
+      bare-path: 3.1.3
       bare-stream: 2.13.4(bare-buffer@3.7.1)(bare-events@2.9.2)
       bare-url: 2.5.6
       fast-fifo: 1.3.2
@@ -3351,7 +3351,7 @@ snapshots:
       - bare-abort-controller
       - react-native-b4a
 
-  bare-path@3.1.2: {}
+  bare-path@3.1.3: {}
 
   bare-stream@2.13.4(bare-buffer@3.7.1)(bare-events@2.9.2):
     dependencies:
@@ -3367,7 +3367,7 @@ snapshots:
   bare-url@2.5.6:
     dependencies:
       bare-buffer: 3.7.1
-      bare-path: 3.1.2
+      bare-path: 3.1.3
 
   base64-js@1.5.1: {}
 
@@ -3806,7 +3806,7 @@ snapshots:
 
   fs-extra@11.4.1:
     dependencies:
-      graceful-fs: 4.2.11
+      graceful-fs: 4.2.12
       jsonfile: 6.2.1
       universalify: 2.0.1
 
@@ -3853,7 +3853,7 @@ snapshots:
 
   graceful-fs@4.2.10: {}
 
-  graceful-fs@4.2.11: {}
+  graceful-fs@4.2.12: {}
 
   gzip-size@3.0.0:
     dependencies:
@@ -4043,7 +4043,7 @@ snapshots:
     dependencies:
       universalify: 2.0.1
     optionalDependencies:
-      graceful-fs: 4.2.11
+      graceful-fs: 4.2.12
 
   keyv@5.6.0:
     dependencies:
@@ -4119,7 +4119,7 @@ snapshots:
 
   load-json-file@4.0.0:
     dependencies:
-      graceful-fs: 4.2.11
+      graceful-fs: 4.2.12
       parse-json: 4.0.0
       pify: 3.0.0
       strip-bom: 3.0.0
@@ -4394,7 +4394,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier@3.10.0: {}
+  prettier@3.10.1: {}
 
   pretty-bytes@3.0.1:
     dependencies:
@@ -4567,7 +4567,7 @@ snapshots:
     dependencies:
       '@semantic-release/commit-analyzer': 13.0.1(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@semantic-release/error': 4.0.0
-      '@semantic-release/github': 12.0.10(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1)
+      '@semantic-release/github': 12.0.11(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1)
       '@semantic-release/npm': 13.2.0(semantic-release@25.0.9(supports-color@8.1.1))
       '@semantic-release/release-notes-generator': 14.1.1(semantic-release@25.0.9(supports-color@8.1.1))(supports-color@8.1.1)
       aggregate-error: 5.1.0
